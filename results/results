@@ -1,0 +1,96 @@
+#
+# Results on Monday March 21 2016 03:06:45 UTC.
+# USER AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36
+# Design number was non-random = 0
+#
+# Columns below this comment are as follows:
+# 1. Time results were received.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Item number.
+# 5. Element number.
+# 6. Type.
+# 7. Group.
+# 8. Field name.
+# 9. Field value.
+1458529605,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,name,fgwregw
+1458529605,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,age,47
+1458529605,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,sex,male
+1458529605,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,_REACTION_TIME_,9507
+1458529605,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,name,trge
+1458529605,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,age,34
+1458529605,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,sex,female
+1458529605,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,_REACTION_TIME_,10182
+#
+# Results on Monday March 21 2016 03:06:50 UTC.
+# USER AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36
+# Design number was non-random = 0
+#
+# Columns below this comment are as follows:
+# 1. Time results were received.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Item number.
+# 5. Element number.
+# 6. Type.
+# 7. Group.
+# 8. Field name.
+# 9. Field value.
+1458529610,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,name,fgwregw
+1458529610,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,age,47
+1458529610,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,sex,male
+1458529610,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,_REACTION_TIME_,9507
+1458529610,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,name,trge
+1458529610,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,age,34
+1458529610,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,sex,female
+1458529610,b45265c79026cc4903c6559ef09c6156,Form,2,0,intro,NULL,_REACTION_TIME_,10182
+#
+# Results on Monday March 21 2016 03:08:41 UTC.
+# USER AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36
+# Design number was non-random = 2
+#
+# Columns below this comment are as follows:
+# 1. Time results were received.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Item number.
+# 5. Element number.
+# 6. Type.
+# 7. Group.
+# 8. Field name.
+# 9. Field value.
+1458529721,b45265c79026cc4903c6559ef09c6156,Form,1,0,intro,NULL,name,jk;l
+1458529721,b45265c79026cc4903c6559ef09c6156,Form,1,0,intro,NULL,age,456
+1458529721,b45265c79026cc4903c6559ef09c6156,Form,1,0,intro,NULL,sex,male
+1458529721,b45265c79026cc4903c6559ef09c6156,Form,1,0,intro,NULL,_REACTION_TIME_,6398
+1458529721,b45265c79026cc4903c6559ef09c6156,Form,2,0,guess0,NULL,guesses,no
+1458529721,b45265c79026cc4903c6559ef09c6156,Form,2,0,guess0,NULL,confidence,3
+1458529721,b45265c79026cc4903c6559ef09c6156,Form,2,0,guess0,NULL,_REACTION_TIME_,4556
+1458529721,b45265c79026cc4903c6559ef09c6156,Form,2,0,guess0,NULL,guesses,shoe
+1458529721,b45265c79026cc4903c6559ef09c6156,Form,2,0,guess0,NULL,confidence,5
+1458529721,b45265c79026cc4903c6559ef09c6156,Form,2,0,guess0,NULL,_REACTION_TIME_,5849
+#
+# Results on Monday March 21 2016 03:15:22 UTC.
+# USER AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36
+# Design number was non-random = 3
+#
+# Columns below this comment are as follows:
+# 1. Time results were received.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Item number.
+# 5. Element number.
+# 6. Type.
+# 7. Group.
+# 8. Field name.
+# 9. Field value.
+1458530122,b45265c79026cc4903c6559ef09c6156,Form,1,0,intro,NULL,name,ok
+1458530122,b45265c79026cc4903c6559ef09c6156,Form,1,0,intro,NULL,age,35
+1458530122,b45265c79026cc4903c6559ef09c6156,Form,1,0,intro,NULL,sex,male
+1458530122,b45265c79026cc4903c6559ef09c6156,Form,1,0,intro,NULL,_REACTION_TIME_,8217
+1458530122,b45265c79026cc4903c6559ef09c6156,Form,2,0,guess0,NULL,guesses,idk
+1458530122,b45265c79026cc4903c6559ef09c6156,Form,2,0,guess0,NULL,confidence,5
+1458530122,b45265c79026cc4903c6559ef09c6156,Form,2,0,guess0,NULL,_REACTION_TIME_,5948
+1458530122,b45265c79026cc4903c6559ef09c6156,Form,3,0,guess1,NULL,guess,lol
+1458530122,b45265c79026cc4903c6559ef09c6156,Form,3,0,guess1,NULL,confidence,5
+1458530122,b45265c79026cc4903c6559ef09c6156,Form,3,0,guess1,NULL,_REACTION_TIME_,5394
