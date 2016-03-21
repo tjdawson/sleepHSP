@@ -2,3 +2,19 @@
     color: red;
     font-weight: bold;
 }
+
+table {
+        border-collapse: collapse;
+    }
+
+td {
+    /*border: solid 1px #000000;*/
+    padding: 10px;
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+tr.bordered {
+    border-bottom: 1px solid #000;
+}
