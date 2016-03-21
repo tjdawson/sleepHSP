@@ -1,10 +1,6 @@
-/*noinspection CssUnknownTarget*/
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300);
-
 body {
-    font-family: 'Open Sans';
-    color: #44464b;
-    background-color: #ffffff;
+    color: black;
+    background-color: white;
     margin-left: 0;
     margin-top: 5em;
 }
@@ -15,16 +11,13 @@ body {
 }
 div.bar-container {
     border: 1px solid;
-    border-color: #bbbdc0;
+    border-color: #9ea4b1;
     background-color: white;
 }
 div.bar {
-    background-color: #01256e;
+    background-color: blue;
 }
 p.progress-text {
-    font-family: 'Open Sans';
-    font-weight: 300;
-    color: #44464b;
     padding-top: 0.5em;
     margin-top: 0;
     margin-bottom: 2em;
@@ -32,14 +25,14 @@ p.progress-text {
     font-size: small;
 }
 p.practice-box {
-    color: #01256e;
+    color: blue;
     height: 1.5em;
     padding-bottom: 1em;
     font-size: small;
     text-align: center;
 }
 span.retry {
-    color: #01256e;
+    color: blue;
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
@@ -48,5 +41,5 @@ span.retry:hover {
     text-decoration: underline;
 }
 span.retry:visited {
-    color: #01256e;
+    color: blue;
 }
