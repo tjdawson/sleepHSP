@@ -1,15 +1,7 @@
-var shuffleSequence = seq("intro", sepWith("sep", seq("guess0", "guess1"),  
-                                                      seq("guess0", "guess1"),
-                                                      seq("guess0", "guess1"),
-                                                      seq("guess0", "guess1"),
-                                                      seq("guess0", "guess1"),
-                                                      seq("guess0", "guess1"),
-                                                      seq("guess0", "guess1"),
-                                                      seq("guess0", "guess1"),
-                                                      seq("guess0", "guess1"),
-                                                      seq("guess0", "guess1")
-                                           ),
-                         "end" 
+var shuffleSequence = seq("intro",
+                          "guess0", "guess1", "guess2",
+                          "sep",
+                          "guess0", "guess1", "guess2"
                           );
 var practiceItemTypes = ["practice"];
 
@@ -64,18 +56,12 @@ var items = [
 
     ["guess1", "Form", {
         html: { include: "guess.html" }
-    } ]
-
-    
-
-    //["end", "Form", {
-      //  html: { include: "end.html" }
-    //} ],
+    } ],
 
     //
 
-    //["blank_screen", "Form", {
-      //  include: "blank_screen.html"
-    //}]
+    ["guess2", "Form", {
+        html: { include: "guess.html" }
+    } ]
 
 ];
