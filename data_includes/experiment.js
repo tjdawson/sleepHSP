@@ -98,25 +98,29 @@ var items = [
 
     ["intro", "Form", {
         html: {include: "intro.html"},
+        hideProgressBar: true
+
     }],
 
     //
 
     ["intro2", "Form", {
         html: {include: "intro2.html"},
+        hideProgressBar: true
+
     }],
 
     //
 
     ["intro3", "Form", {
         html: { include: "intro3.html" },
+        hideProgressBar: true,
         validators: {
             age: function (s) { if (s.match(/^\d+$/)) return true; else return "Bad value for \u2018age\u2019"; }
         }
     } ],
 
     //
-
 
     ["guess0", "Form", {
         html: { include: "guess0.html" }
