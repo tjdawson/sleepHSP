@@ -1,4 +1,4 @@
-var shuffleSequence = seq("intro",
+var shuffleSequence = seq("intro", "intro2", "intro3",
     "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
     "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
     "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
@@ -97,13 +97,26 @@ var items = [
     //
 
     ["intro", "Form", {
-        html: { include: "intro.html" },
+        html: {include: "intro.html"},
+    }],
+
+    //
+
+    ["intro2", "Form", {
+        html: {include: "intro2.html"},
+    }],
+
+    //
+
+    ["intro3", "Form", {
+        html: { include: "intro3.html" },
         validators: {
             age: function (s) { if (s.match(/^\d+$/)) return true; else return "Bad value for \u2018age\u2019"; }
         }
     } ],
 
     //
+
 
     ["guess0", "Form", {
         html: { include: "guess0.html" }
