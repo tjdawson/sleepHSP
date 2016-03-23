@@ -74,6 +74,10 @@ div.bar {
     background-color: #01256e;
 }
 
+div.intro {
+    text-align: justify;
+}
+
 p.progress-text {
     padding-top: 0.5em;
     margin-top: 0;
