@@ -1,42 +1,34 @@
 <div style="width: 40em;">
-<p>
-In this experiment, you will be asked to guess the meanings of novel words.
-</p>
-<p>
-You will see 10 short video segments. Each of the videos will be completely silent except for a single word.
-</p>
-<p>
-When you are ready, please type one word into the form and press "submit". Then, please wait until the next video starts to make your next guess.
-</p>
+    <h1><img src="https://upenn.box.com/shared/static/kk7q8sx5u8h6m8fjh11bvwfc9iwrpgoq.png" style="width:5%; height:auto"> Instructions</h1>
+    <table>
+        <tr>
+            <td colspan="2" style="width: 30em; padding-bottom: 1em;">
+                Please enter your unique identifier and demographic information below. If you have not been provided with one, please ask the experimenter for one now. When you are done, please click the link to continue.
+            </td>
+        </tr>
+        <tr>
+            <td>Unique ID:</td><td><input name="subject_id" id="subject_id" type="text" size="30" class="obligatory" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><label class="error" for="subject_id"></label></td>
+        </tr>
+        <tr>
+            <td>Age:</td><td><input name="age" id="age" type="text" size="30" class="obligatory" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><label class="error" for="age"></label></td>
+        </tr>
+        <tr>
+            <td>Sex:</td><td>
+            <label for="csexmale"><input name="sex" id="sex" type="radio" value="male" class="obligatory" id="csexmale" /><span>Male</span></label>
+            <label for="csexfemale"><input name="sex" type="radio" value="female" id="csexfemale"/><span>Female</span></label>
+            <label for="csexother"><input name="sex" type="radio" value="other" id="csexother"/><span>Other</span></label>
+            <label for="csexnot"> <input name="sex" type="radio" value="prefernot" id="csexnot"/><span>Prefer not to say</span></label>
+        </tr>
+        <tr>
+            <td colspan="2"><label class="error" for="sex"></label></td>
+        </tr>
 
-<table>
-<tr>
-<td colspan="2" style="width: 30em; padding-bottom: 1em;">
-Please enter your unique identifier below to start. If you have not been provided with one, please ask the experimenter for one now.
-</td>
-</tr>
-<tr>
-  <td>Unique ID:</td><td><input name="subj_id" type="text" size="30" class="obligatory" /></td>
-</tr>
-<tr>
-<td colspan="2"><label class="error" for="subj_id"></label></td>
-</tr>
-<tr>
-  <td>Age:</td><td><input name="age" type="text" size="30" class="obligatory" /></td>
-</tr>
-<tr>
-<td colspan="2"><label class="error" for="age"></label></td>
-</tr>
-<tr>
-  <td>Sex:</td><td><input name="sex" type="radio" value="male" class="obligatory" id="csexmale" /><label for="csexmale">Male </label>
-                   <input name="sex" type="radio" value="female" id="csexfemale"/><label for="csexfemale"> Female</label>
-                   <input name="sex" type="radio" value="other" id="csexother"/><label for="csexother"> Other</label>
-    <input name="sex" type="radio" value="prefernot" id="csexnot"/><label for="csexnot"> Prefer not to say</label>
-</tr>
-<tr>
-<td colspan="2"><label class="error" for="sex"></label></td>
-</tr>
-
-</table>
+    </table>
 
 </div>

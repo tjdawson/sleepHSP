@@ -1,4 +1,4 @@
-var shuffleSequence = seq("intro", "intro2", "intro3",
+var shuffleSequence = seq("intro", "intro1", "intro2", "intro3",
     "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
     "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
     "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
@@ -58,7 +58,7 @@ var shuffleSequence = seq("intro", "intro2", "intro3",
     "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
     "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
     "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
-    "guess0", "guess1", "guess2", "guess3", "guess4", "sep"
+    "guess0", "guess1", "guess2", "guess3", "guess4", "end"
                           );
 var practiceItemTypes = ["practice"];
 
@@ -98,7 +98,17 @@ var items = [
 
     ["intro", "Form", {
         html: {include: "intro.html"},
-        hideProgressBar: true
+        hideProgressBar: true,
+        countsForProgressBar: false
+
+    }],
+
+    //
+
+    ["intro1", "Form", {
+        html: {include: "intro1.html"},
+        hideProgressBar: true,
+        countsForProgressBar: false
 
     }],
 
@@ -106,7 +116,8 @@ var items = [
 
     ["intro2", "Form", {
         html: {include: "intro2.html"},
-        hideProgressBar: true
+        hideProgressBar: true,
+        countsForProgressBar: false
 
     }],
 
@@ -115,6 +126,7 @@ var items = [
     ["intro3", "Form", {
         html: { include: "intro3.html" },
         hideProgressBar: true,
+        countsForProgressBar: false,
         validators: {
             age: function (s) { if (s.match(/^\d+$/)) return true; else return "Bad value for \u2018age\u2019"; }
         }
