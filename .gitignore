@@ -52,3 +52,5 @@ Temporary Items
 .idea/sleepHSP.iml
 .idea/misc.xml
 .idea/workspace.xml
+processing_scripts/process_guesses.py
+*.docx

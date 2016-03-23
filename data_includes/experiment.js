@@ -1,15 +1,72 @@
 var shuffleSequence = seq("intro",
-                          "guess0", "guess1", "guess2",
-                          "sep",
-                          "guess0", "guess1", "guess2"
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
+    "guess0", "guess1", "guess2", "guess3", "guess4", "sep"
                           );
 var practiceItemTypes = ["practice"];
 
 var defaults = [
     "Separator", {
         transfer: "keypress",
-        normalMessage: "Please wait for the next video. Then, press any key to start guessing.",
-        errorMessage: "error\: Please wait for the next video. Then, press any key to start guessing."
+        normalMessage: "Please wait for the video to finish. Then, press any key to start guessing.",
+        errorMessage: "Please wait for the video to finish. Then, press any key to start guessing."
     },
     "DashedSentence", {
         mode: "self-paced reading"
@@ -27,9 +84,9 @@ var defaults = [
         hideProgressBar: true
     },
     "Form", {
-        hideProgressBar: true,
+        hideProgressBar: false,
         continueOnReturn: true,
-        saveReactionTime: true
+        saveReactionTime: false
     }
 ];
 
@@ -61,6 +118,18 @@ var items = [
     //
 
     ["guess2", "Form", {
+        html: { include: "guess.html" }
+    } ],
+
+    //
+
+    ["guess3", "Form", {
+        html: { include: "guess.html" }
+    } ],
+
+    //
+
+    ["guess4", "Form", {
         html: { include: "guess.html" }
     } ]
 
