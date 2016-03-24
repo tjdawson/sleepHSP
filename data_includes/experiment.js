@@ -65,7 +65,7 @@ var practiceItemTypes = ["practice"];
 var defaults = [
     "Separator", {
         transfer: "keypress",
-        normalMessage: "Please wait for the video to finish. Then, press any key to start guessing.",
+        normalMessage: "Please look up at the display on the wall and watch the video. Then, press any key to start guessing.",
         errorMessage: "Please wait for the video to finish. Then, press any key to start guessing."
     },
     "DashedSentence", {
@@ -160,6 +160,12 @@ var items = [
 
     ["guess4", "Form", {
         html: { include: "guess.html" }
-    } ]
+    } ],
+
+    //
+
+    ["sep1", "Separator", {
+        normalMessage: "Please look up at the display on the wall and wait for the next video. Then, press any key to begin guessing.",
+    }]
 
 ];
