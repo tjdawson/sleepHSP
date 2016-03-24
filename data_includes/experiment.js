@@ -65,7 +65,7 @@ var practiceItemTypes = ["practice"];
 var defaults = [
     "Separator", {
         transfer: "keypress",
-        normalMessage: "Please look up at the display on the wall and watch the video. Then, press any key to start guessing.",
+        normalMessage: "Please look up at the display on the wall and watch the video. When it's finished, press any key to start guessing.",
         errorMessage: "Please wait for the video to finish. Then, press any key to start guessing."
     },
     "DashedSentence", {
@@ -93,6 +93,15 @@ var defaults = [
 var items = [
 
     ["sep", "Separator", { }],
+
+    //
+
+    ["intro", "Form", {
+        html: {include: "end.html"},
+        hideProgressBar: true,
+        countsForProgressBar: false
+
+    }],
 
     //
 

@@ -1,3 +1,10 @@
+<style>
+    label {
+        display: inline-block;
+        margin-bottom: 8px;
+    }
+</style>
+
 <div style="width: 40em;" id="intro">
     <h1><img src="https://upenn.box.com/shared/static/kk7q8sx5u8h6m8fjh11bvwfc9iwrpgoq.png" style="width:5%; height:auto"> Instructions</h1>
     <table>
@@ -18,7 +25,7 @@
         <tr>
             <td colspan="2"><label class="error" for="age"></label></td>
         </tr>
-        <tr>
+        <tr class="bordered">
             <td>Sex:</td><td>
             <label for="csexmale"><input name="sex" id="sex" type="radio" value="male" class="obligatory" id="csexmale" /><span>Male</span></label>
             <label for="csexfemale"><input name="sex" type="radio" value="female" id="csexfemale"/><span>Female</span></label>
