@@ -1,3 +1,27 @@
+// functions for generating followup links and emails
+
+var email;
+var unique_id;
+var followup_link;
+
+function send_mail(){
+    email = document.getElementById('participant_email');
+    unique_id = document.getElementById('unique_id');
+    followup_link = "http://spellout.net/ibexexps/trueswell_lab/followup/"+unique_id.value+"/experiment.html";
+    document.location.href = "mailto:"+email.value+"?subject=Sleep Study Followup Survey Link&body="+followup_link;
+}
+
+function print_link(){
+    email = document.getElementById('participant_email');
+    unique_id = document.getElementById('unique_id');
+    followup_link = "http://spellout.net/ibexexps/trueswell_lab/followup/"+unique_id.value+"/experiment.html";
+    var display_link = document.createElement('p');
+    display_link.textContent = followup_link;
+    document.getElementById("display_link").appendChild(display_link)
+}
+
+//
+
 var shuffleSequence = seq("intro", "intro1", "intro2", "intro3",
     "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
     "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
