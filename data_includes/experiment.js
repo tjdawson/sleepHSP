@@ -96,7 +96,7 @@ var items = [
 
     //
 
-    ["intro", "Form", {
+    ["end", "Form", {
         html: {include: "end.html"},
         hideProgressBar: true,
         countsForProgressBar: false
