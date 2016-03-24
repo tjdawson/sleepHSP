@@ -14,7 +14,7 @@ function send_mail(){
 function print_link(){
     email = document.getElementById('participant_email');
     unique_id = document.getElementById('unique_id');
-    followup_link = "http://spellout.net/ibexexps/trueswell_lab/followup/"+unique_id.value+"/experiment.html";
+    followup_link = "http://spellout.net/ibexexps/trueswell_lab/followup"+unique_id.value+"/experiment.html";
     var display_link = document.createElement('p');
     display_link.textContent = followup_link;
     document.getElementById("display_link").appendChild(display_link)
@@ -22,7 +22,7 @@ function print_link(){
 
 //
 
-var shuffleSequence = seq("intro", "intro1", "intro2", "intro3",
+var shuffleSequence = seq("intro", "intro1", "intro2", "intro3", "sep",
     "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
     "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
     "guess0", "guess1", "guess2", "guess3", "guess4", "sep",
