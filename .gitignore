@@ -56,3 +56,6 @@ processing_scripts/process_guesses.py
 *.docx
 penn_shield.png
 *.pptm
+*.wmv
+*.wav
+*.xlsm
