@@ -1,0 +1,36 @@
+#
+# Results on Thursday March 24 2016 19:29:29 UTC.
+# USER AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36
+# Design number was non-random = 4
+#
+# Columns below this comment are as follows:
+# 1. Time results were received.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Item number.
+# 5. Element number.
+# 6. Type.
+# 7. Group.
+# 8. Field name.
+# 9. Field value.
+1458847770,882c76b07ccab7267474ed861cb66362,Form,5,0,intro3,NULL,subject_id,Tim
+1458847770,882c76b07ccab7267474ed861cb66362,Form,5,0,intro3,NULL,age,25
+1458847770,882c76b07ccab7267474ed861cb66362,Form,5,0,intro3,NULL,sex,male
+1458847770,882c76b07ccab7267474ed861cb66362,Form,6,0,guess0,NULL,guess,shoe
+1458847770,882c76b07ccab7267474ed861cb66362,Form,6,0,guess0,NULL,confidence,5
+1458847770,882c76b07ccab7267474ed861cb66362,Form,7,0,guess1,NULL,guess,toy
+1458847770,882c76b07ccab7267474ed861cb66362,Form,7,0,guess1,NULL,confidence,3
+1458847770,882c76b07ccab7267474ed861cb66362,Form,8,0,guess2,NULL,guess,boot
+1458847770,882c76b07ccab7267474ed861cb66362,Form,8,0,guess2,NULL,confidence,2
+1458847770,882c76b07ccab7267474ed861cb66362,Form,9,0,guess3,NULL,guess,shoe
+1458847770,882c76b07ccab7267474ed861cb66362,Form,9,0,guess3,NULL,confidence,4
+1458847770,882c76b07ccab7267474ed861cb66362,Form,10,0,guess4,NULL,guess,sock
+1458847770,882c76b07ccab7267474ed861cb66362,Form,10,0,guess4,NULL,confidence,3
+1458847770,882c76b07ccab7267474ed861cb66362,Form,6,0,guess0,NULL,guess,nose
+1458847770,882c76b07ccab7267474ed861cb66362,Form,6,0,guess0,NULL,confidence,4
+1458847770,882c76b07ccab7267474ed861cb66362,Form,7,0,guess1,NULL,guess,face
+1458847770,882c76b07ccab7267474ed861cb66362,Form,7,0,guess1,NULL,confidence,3
+1458847770,882c76b07ccab7267474ed861cb66362,Form,8,0,guess2,NULL,guess,
+1458847770,882c76b07ccab7267474ed861cb66362,Form,9,0,guess3,NULL,guess,
+1458847770,882c76b07ccab7267474ed861cb66362,Form,10,0,guess4,NULL,guess,
+1458847770,882c76b07ccab7267474ed861cb66362,Form,1,0,end,NULL,enter,AMPMHL001
