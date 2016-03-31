@@ -1,5 +1,4 @@
 // functions for generating followup links and emails
-
 var email;
 var unique_id;
 var followup_link;
@@ -22,7 +21,7 @@ function print_link(){
 
 //
 
-var shuffleSequence = seq("intro", "intro1", "intro2", "intro3", "sep",
+var shuffleSequence = seq("intro", "intro1", "intro2", "intro3", "sep", 
 "mipen_bag_guess0", "mipen_bag_guess1", "mipen_bag_guess2", "mipen_bag_guess3", "mipen_bag_guess4", "sep",
 "bist_horse_guess0", "bist_horse_guess1", "bist_horse_guess2", "bist_horse_guess3", "bist_horse_guess4", "sep",
 "tula_mommy_guess0", "tula_mommy_guess1", "tula_mommy_guess2", "tula_mommy_guess3", "tula_mommy_guess4", "sep",
@@ -82,10 +81,9 @@ var shuffleSequence = seq("intro", "intro1", "intro2", "intro3", "sep",
 "tiz_thing_guess0", "tiz_thing_guess1", "tiz_thing_guess2", "tiz_thing_guess3", "tiz_thing_guess4", "sep",
 "geck_nose_guess0", "geck_nose_guess1", "geck_nose_guess2", "geck_nose_guess3", "geck_nose_guess4", "sep",
 "telpen_ball_guess0", "telpen_ball_guess1", "telpen_ball_guess2", "telpen_ball_guess3", "telpen_ball_guess4", "sep",
-"blime_toy_guess0", "blime_toy_guess1", "blime_toy_guess2", "blime_toy_guess3", "blime_toy_guess4",
+"blime_toy_guess0", "blime_toy_guess1", "blime_toy_guess2", "blime_toy_guess3", "blime_toy_guess4", 
 "end"
 );
-
 
 var defaults = [
     "Separator", {
@@ -116,47 +114,37 @@ var defaults = [
 ];
 
 var items = [
-
     ["sep", "Separator", { }],
-
+    
     //
-
-    ["end", "Form", {
-        html: {include: "end.html"},
-        hideProgressBar: true,
-        countsForProgressBar: false
-
-    }],
-
-    //
-
+    
     ["intro", "Form", {
         html: {include: "intro.html"},
         hideProgressBar: true,
         countsForProgressBar: false
-
+    
     }],
-
+    
     //
-
+    
     ["intro1", "Form", {
         html: {include: "intro1.html"},
         hideProgressBar: true,
         countsForProgressBar: false
-
+    
     }],
-
+    
     //
-
+    
     ["intro2", "Form", {
         html: {include: "intro2.html"},
         hideProgressBar: true,
         countsForProgressBar: false
-
+    
     }],
-
+    
     //
-
+    
     ["intro3", "Form", {
         html: { include: "intro3.html" },
         hideProgressBar: true,
@@ -165,281 +153,1212 @@ var items = [
             age: function (s) { if (s.match(/^\d+$/)) return true; else return "Bad value for \u2018age\u2019"; }
         }
     } ],
-
+    
     //
-
-    ["guess0", "Form", {
-        html: { include: "guess0.html" }
-    } ],
-
-    //
-
-    ["guess1", "Form", {
-        html: { include: "guess.html" }
-    } ],
-
-    //
-
-    ["guess2", "Form", {
-        html: { include: "guess.html" }
-    } ],
-
-    //
-
-    ["guess3", "Form", {
-        html: { include: "guess.html" }
-    } ],
-
-    //
-
-    ["guess4", "Form", {
-        html: { include: "guess.html" }
-    } ],
-
-    //
-
-    ["sep1", "Separator", {
-        normalMessage: "Please look up at the display on the wall and wait for the next video. Then, press any key to begin guessing.",
-    }],
-
-    ["bist_horse_guess0", "Form", {
-    html: {include: "guess0.html"}
-    }],
-
-    ["blime_toy_guess0", "Form", {
-    html: {include: "guess0.html"}
-    }],
-
-    ["doon_necklace_guess0", "Form", {
-    html: {include: "guess0.html"}
-    }],
-
-    ["geck_nose_guess0", "Form", {
-    html: {include: "guess0.html"}
-    }],
-
-    ["jair_time_guess0", "Form", {
-    html: {include: "guess0.html"}
-    }],
-
-    ["mipen_bag_guess0", "Form", {
-    html: {include: "guess0.html"}
-    }],
-
-    ["tace_phone_guess0", "Form", {
-    html: {include: "guess0.html"}
-    }],
-
-    ["telpen_ball_guess0", "Form", {
-    html: {include: "guess0.html"}
-    }],
-
-    ["tiz_thing_guess0", "Form", {
-    html: {include: "guess0.html"}
-    }],
-
-    ["tula_mommy_guess0", "Form", {
-    html: {include: "guess0.html"}
-    }],
-
-    ["vash_shoe_guess0", "Form", {
-    html: {include: "guess0.html"}
-    }],
-
-    ["zant_book_guess0", "Form", {
-    html: {include: "guess0.html"}
-    }],
-
-    ["bist_horse_guess1", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["blime_toy_guess1", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["doon_necklace_guess1", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["geck_nose_guess1", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["jair_time_guess1", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["mipen_bag_guess1", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["tace_phone_guess1", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["telpen_ball_guess1", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["tiz_thing_guess1", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["tula_mommy_guess1", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["vash_shoe_guess1", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["zant_book_guess1", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["bist_horse_guess2", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["blime_toy_guess2", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["doon_necklace_guess2", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["geck_nose_guess2", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["jair_time_guess2", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["mipen_bag_guess2", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["tace_phone_guess2", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["telpen_ball_guess2", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["tiz_thing_guess2", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["tula_mommy_guess2", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["vash_shoe_guess2", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["zant_book_guess2", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["bist_horse_guess3", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["blime_toy_guess3", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["doon_necklace_guess3", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["geck_nose_guess3", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["jair_time_guess3", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["mipen_bag_guess3", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["tace_phone_guess3", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["telpen_ball_guess3", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["tiz_thing_guess3", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["tula_mommy_guess3", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["vash_shoe_guess3", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["zant_book_guess3", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["bist_horse_guess4", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["blime_toy_guess4", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["doon_necklace_guess4", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["geck_nose_guess4", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["jair_time_guess4", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["mipen_bag_guess4", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["tace_phone_guess4", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["telpen_ball_guess4", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["tiz_thing_guess4", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["tula_mommy_guess4", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["vash_shoe_guess4", "Form", {
-    html: {include: "guess.html"}
-    }],
-
-    ["zant_book_guess4", "Form", {
-    html: {include: "guess.html"}
+["mipen_bag_guess0", "Form", { 
+html: {include: "mipen_bag_guess0.html"} 
+}],
+
+["bist_horse_guess0", "Form", { 
+html: {include: "bist_horse_guess0.html"} 
+}],
+
+["tula_mommy_guess0", "Form", { 
+html: {include: "tula_mommy_guess0.html"} 
+}],
+
+["doon_necklace_guess0", "Form", { 
+html: {include: "doon_necklace_guess0.html"} 
+}],
+
+["tace_phone_guess0", "Form", { 
+html: {include: "tace_phone_guess0.html"} 
+}],
+
+["jair_time_guess0", "Form", { 
+html: {include: "jair_time_guess0.html"} 
+}],
+
+["zant_book_guess0", "Form", { 
+html: {include: "zant_book_guess0.html"} 
+}],
+
+["vash_shoe_guess0", "Form", { 
+html: {include: "vash_shoe_guess0.html"} 
+}],
+
+["tiz_thing_guess0", "Form", { 
+html: {include: "tiz_thing_guess0.html"} 
+}],
+
+["geck_nose_guess0", "Form", { 
+html: {include: "geck_nose_guess0.html"} 
+}],
+
+["telpen_ball_guess0", "Form", { 
+html: {include: "telpen_ball_guess0.html"} 
+}],
+
+["blime_toy_guess0", "Form", { 
+html: {include: "blime_toy_guess0.html"} 
+}],
+
+["mipen_bag_guess0", "Form", { 
+html: {include: "mipen_bag_guess0.html"} 
+}],
+
+["bist_horse_guess0", "Form", { 
+html: {include: "bist_horse_guess0.html"} 
+}],
+
+["tula_mommy_guess0", "Form", { 
+html: {include: "tula_mommy_guess0.html"} 
+}],
+
+["doon_necklace_guess0", "Form", { 
+html: {include: "doon_necklace_guess0.html"} 
+}],
+
+["tace_phone_guess0", "Form", { 
+html: {include: "tace_phone_guess0.html"} 
+}],
+
+["jair_time_guess0", "Form", { 
+html: {include: "jair_time_guess0.html"} 
+}],
+
+["zant_book_guess0", "Form", { 
+html: {include: "zant_book_guess0.html"} 
+}],
+
+["vash_shoe_guess0", "Form", { 
+html: {include: "vash_shoe_guess0.html"} 
+}],
+
+["tiz_thing_guess0", "Form", { 
+html: {include: "tiz_thing_guess0.html"} 
+}],
+
+["geck_nose_guess0", "Form", { 
+html: {include: "geck_nose_guess0.html"} 
+}],
+
+["telpen_ball_guess0", "Form", { 
+html: {include: "telpen_ball_guess0.html"} 
+}],
+
+["blime_toy_guess0", "Form", { 
+html: {include: "blime_toy_guess0.html"} 
+}],
+
+["mipen_bag_guess0", "Form", { 
+html: {include: "mipen_bag_guess0.html"} 
+}],
+
+["bist_horse_guess0", "Form", { 
+html: {include: "bist_horse_guess0.html"} 
+}],
+
+["tula_mommy_guess0", "Form", { 
+html: {include: "tula_mommy_guess0.html"} 
+}],
+
+["doon_necklace_guess0", "Form", { 
+html: {include: "doon_necklace_guess0.html"} 
+}],
+
+["tace_phone_guess0", "Form", { 
+html: {include: "tace_phone_guess0.html"} 
+}],
+
+["jair_time_guess0", "Form", { 
+html: {include: "jair_time_guess0.html"} 
+}],
+
+["zant_book_guess0", "Form", { 
+html: {include: "zant_book_guess0.html"} 
+}],
+
+["vash_shoe_guess0", "Form", { 
+html: {include: "vash_shoe_guess0.html"} 
+}],
+
+["tiz_thing_guess0", "Form", { 
+html: {include: "tiz_thing_guess0.html"} 
+}],
+
+["geck_nose_guess0", "Form", { 
+html: {include: "geck_nose_guess0.html"} 
+}],
+
+["telpen_ball_guess0", "Form", { 
+html: {include: "telpen_ball_guess0.html"} 
+}],
+
+["blime_toy_guess0", "Form", { 
+html: {include: "blime_toy_guess0.html"} 
+}],
+
+["mipen_bag_guess0", "Form", { 
+html: {include: "mipen_bag_guess0.html"} 
+}],
+
+["bist_horse_guess0", "Form", { 
+html: {include: "bist_horse_guess0.html"} 
+}],
+
+["tula_mommy_guess0", "Form", { 
+html: {include: "tula_mommy_guess0.html"} 
+}],
+
+["doon_necklace_guess0", "Form", { 
+html: {include: "doon_necklace_guess0.html"} 
+}],
+
+["tace_phone_guess0", "Form", { 
+html: {include: "tace_phone_guess0.html"} 
+}],
+
+["jair_time_guess0", "Form", { 
+html: {include: "jair_time_guess0.html"} 
+}],
+
+["zant_book_guess0", "Form", { 
+html: {include: "zant_book_guess0.html"} 
+}],
+
+["vash_shoe_guess0", "Form", { 
+html: {include: "vash_shoe_guess0.html"} 
+}],
+
+["tiz_thing_guess0", "Form", { 
+html: {include: "tiz_thing_guess0.html"} 
+}],
+
+["geck_nose_guess0", "Form", { 
+html: {include: "geck_nose_guess0.html"} 
+}],
+
+["telpen_ball_guess0", "Form", { 
+html: {include: "telpen_ball_guess0.html"} 
+}],
+
+["blime_toy_guess0", "Form", { 
+html: {include: "blime_toy_guess0.html"} 
+}],
+
+["mipen_bag_guess0", "Form", { 
+html: {include: "mipen_bag_guess0.html"} 
+}],
+
+["bist_horse_guess0", "Form", { 
+html: {include: "bist_horse_guess0.html"} 
+}],
+
+["tula_mommy_guess0", "Form", { 
+html: {include: "tula_mommy_guess0.html"} 
+}],
+
+["doon_necklace_guess0", "Form", { 
+html: {include: "doon_necklace_guess0.html"} 
+}],
+
+["tace_phone_guess0", "Form", { 
+html: {include: "tace_phone_guess0.html"} 
+}],
+
+["jair_time_guess0", "Form", { 
+html: {include: "jair_time_guess0.html"} 
+}],
+
+["zant_book_guess0", "Form", { 
+html: {include: "zant_book_guess0.html"} 
+}],
+
+["vash_shoe_guess0", "Form", { 
+html: {include: "vash_shoe_guess0.html"} 
+}],
+
+["tiz_thing_guess0", "Form", { 
+html: {include: "tiz_thing_guess0.html"} 
+}],
+
+["geck_nose_guess0", "Form", { 
+html: {include: "geck_nose_guess0.html"} 
+}],
+
+["telpen_ball_guess0", "Form", { 
+html: {include: "telpen_ball_guess0.html"} 
+}],
+
+["blime_toy_guess0", "Form", { 
+html: {include: "blime_toy_guess0.html"} 
+}],
+
+["mipen_bag_guess1", "Form", { 
+html: {include: "mipen_bag_guess1.html"} 
+}],
+
+["bist_horse_guess1", "Form", { 
+html: {include: "bist_horse_guess1.html"} 
+}],
+
+["tula_mommy_guess1", "Form", { 
+html: {include: "tula_mommy_guess1.html"} 
+}],
+
+["doon_necklace_guess1", "Form", { 
+html: {include: "doon_necklace_guess1.html"} 
+}],
+
+["tace_phone_guess1", "Form", { 
+html: {include: "tace_phone_guess1.html"} 
+}],
+
+["jair_time_guess1", "Form", { 
+html: {include: "jair_time_guess1.html"} 
+}],
+
+["zant_book_guess1", "Form", { 
+html: {include: "zant_book_guess1.html"} 
+}],
+
+["vash_shoe_guess1", "Form", { 
+html: {include: "vash_shoe_guess1.html"} 
+}],
+
+["tiz_thing_guess1", "Form", { 
+html: {include: "tiz_thing_guess1.html"} 
+}],
+
+["geck_nose_guess1", "Form", { 
+html: {include: "geck_nose_guess1.html"} 
+}],
+
+["telpen_ball_guess1", "Form", { 
+html: {include: "telpen_ball_guess1.html"} 
+}],
+
+["blime_toy_guess1", "Form", { 
+html: {include: "blime_toy_guess1.html"} 
+}],
+
+["mipen_bag_guess1", "Form", { 
+html: {include: "mipen_bag_guess1.html"} 
+}],
+
+["bist_horse_guess1", "Form", { 
+html: {include: "bist_horse_guess1.html"} 
+}],
+
+["tula_mommy_guess1", "Form", { 
+html: {include: "tula_mommy_guess1.html"} 
+}],
+
+["doon_necklace_guess1", "Form", { 
+html: {include: "doon_necklace_guess1.html"} 
+}],
+
+["tace_phone_guess1", "Form", { 
+html: {include: "tace_phone_guess1.html"} 
+}],
+
+["jair_time_guess1", "Form", { 
+html: {include: "jair_time_guess1.html"} 
+}],
+
+["zant_book_guess1", "Form", { 
+html: {include: "zant_book_guess1.html"} 
+}],
+
+["vash_shoe_guess1", "Form", { 
+html: {include: "vash_shoe_guess1.html"} 
+}],
+
+["tiz_thing_guess1", "Form", { 
+html: {include: "tiz_thing_guess1.html"} 
+}],
+
+["geck_nose_guess1", "Form", { 
+html: {include: "geck_nose_guess1.html"} 
+}],
+
+["telpen_ball_guess1", "Form", { 
+html: {include: "telpen_ball_guess1.html"} 
+}],
+
+["blime_toy_guess1", "Form", { 
+html: {include: "blime_toy_guess1.html"} 
+}],
+
+["mipen_bag_guess1", "Form", { 
+html: {include: "mipen_bag_guess1.html"} 
+}],
+
+["bist_horse_guess1", "Form", { 
+html: {include: "bist_horse_guess1.html"} 
+}],
+
+["tula_mommy_guess1", "Form", { 
+html: {include: "tula_mommy_guess1.html"} 
+}],
+
+["doon_necklace_guess1", "Form", { 
+html: {include: "doon_necklace_guess1.html"} 
+}],
+
+["tace_phone_guess1", "Form", { 
+html: {include: "tace_phone_guess1.html"} 
+}],
+
+["jair_time_guess1", "Form", { 
+html: {include: "jair_time_guess1.html"} 
+}],
+
+["zant_book_guess1", "Form", { 
+html: {include: "zant_book_guess1.html"} 
+}],
+
+["vash_shoe_guess1", "Form", { 
+html: {include: "vash_shoe_guess1.html"} 
+}],
+
+["tiz_thing_guess1", "Form", { 
+html: {include: "tiz_thing_guess1.html"} 
+}],
+
+["geck_nose_guess1", "Form", { 
+html: {include: "geck_nose_guess1.html"} 
+}],
+
+["telpen_ball_guess1", "Form", { 
+html: {include: "telpen_ball_guess1.html"} 
+}],
+
+["blime_toy_guess1", "Form", { 
+html: {include: "blime_toy_guess1.html"} 
+}],
+
+["mipen_bag_guess1", "Form", { 
+html: {include: "mipen_bag_guess1.html"} 
+}],
+
+["bist_horse_guess1", "Form", { 
+html: {include: "bist_horse_guess1.html"} 
+}],
+
+["tula_mommy_guess1", "Form", { 
+html: {include: "tula_mommy_guess1.html"} 
+}],
+
+["doon_necklace_guess1", "Form", { 
+html: {include: "doon_necklace_guess1.html"} 
+}],
+
+["tace_phone_guess1", "Form", { 
+html: {include: "tace_phone_guess1.html"} 
+}],
+
+["jair_time_guess1", "Form", { 
+html: {include: "jair_time_guess1.html"} 
+}],
+
+["zant_book_guess1", "Form", { 
+html: {include: "zant_book_guess1.html"} 
+}],
+
+["vash_shoe_guess1", "Form", { 
+html: {include: "vash_shoe_guess1.html"} 
+}],
+
+["tiz_thing_guess1", "Form", { 
+html: {include: "tiz_thing_guess1.html"} 
+}],
+
+["geck_nose_guess1", "Form", { 
+html: {include: "geck_nose_guess1.html"} 
+}],
+
+["telpen_ball_guess1", "Form", { 
+html: {include: "telpen_ball_guess1.html"} 
+}],
+
+["blime_toy_guess1", "Form", { 
+html: {include: "blime_toy_guess1.html"} 
+}],
+
+["mipen_bag_guess1", "Form", { 
+html: {include: "mipen_bag_guess1.html"} 
+}],
+
+["bist_horse_guess1", "Form", { 
+html: {include: "bist_horse_guess1.html"} 
+}],
+
+["tula_mommy_guess1", "Form", { 
+html: {include: "tula_mommy_guess1.html"} 
+}],
+
+["doon_necklace_guess1", "Form", { 
+html: {include: "doon_necklace_guess1.html"} 
+}],
+
+["tace_phone_guess1", "Form", { 
+html: {include: "tace_phone_guess1.html"} 
+}],
+
+["jair_time_guess1", "Form", { 
+html: {include: "jair_time_guess1.html"} 
+}],
+
+["zant_book_guess1", "Form", { 
+html: {include: "zant_book_guess1.html"} 
+}],
+
+["vash_shoe_guess1", "Form", { 
+html: {include: "vash_shoe_guess1.html"} 
+}],
+
+["tiz_thing_guess1", "Form", { 
+html: {include: "tiz_thing_guess1.html"} 
+}],
+
+["geck_nose_guess1", "Form", { 
+html: {include: "geck_nose_guess1.html"} 
+}],
+
+["telpen_ball_guess1", "Form", { 
+html: {include: "telpen_ball_guess1.html"} 
+}],
+
+["blime_toy_guess1", "Form", { 
+html: {include: "blime_toy_guess1.html"} 
+}],
+
+["mipen_bag_guess2", "Form", { 
+html: {include: "mipen_bag_guess2.html"} 
+}],
+
+["bist_horse_guess2", "Form", { 
+html: {include: "bist_horse_guess2.html"} 
+}],
+
+["tula_mommy_guess2", "Form", { 
+html: {include: "tula_mommy_guess2.html"} 
+}],
+
+["doon_necklace_guess2", "Form", { 
+html: {include: "doon_necklace_guess2.html"} 
+}],
+
+["tace_phone_guess2", "Form", { 
+html: {include: "tace_phone_guess2.html"} 
+}],
+
+["jair_time_guess2", "Form", { 
+html: {include: "jair_time_guess2.html"} 
+}],
+
+["zant_book_guess2", "Form", { 
+html: {include: "zant_book_guess2.html"} 
+}],
+
+["vash_shoe_guess2", "Form", { 
+html: {include: "vash_shoe_guess2.html"} 
+}],
+
+["tiz_thing_guess2", "Form", { 
+html: {include: "tiz_thing_guess2.html"} 
+}],
+
+["geck_nose_guess2", "Form", { 
+html: {include: "geck_nose_guess2.html"} 
+}],
+
+["telpen_ball_guess2", "Form", { 
+html: {include: "telpen_ball_guess2.html"} 
+}],
+
+["blime_toy_guess2", "Form", { 
+html: {include: "blime_toy_guess2.html"} 
+}],
+
+["mipen_bag_guess2", "Form", { 
+html: {include: "mipen_bag_guess2.html"} 
+}],
+
+["bist_horse_guess2", "Form", { 
+html: {include: "bist_horse_guess2.html"} 
+}],
+
+["tula_mommy_guess2", "Form", { 
+html: {include: "tula_mommy_guess2.html"} 
+}],
+
+["doon_necklace_guess2", "Form", { 
+html: {include: "doon_necklace_guess2.html"} 
+}],
+
+["tace_phone_guess2", "Form", { 
+html: {include: "tace_phone_guess2.html"} 
+}],
+
+["jair_time_guess2", "Form", { 
+html: {include: "jair_time_guess2.html"} 
+}],
+
+["zant_book_guess2", "Form", { 
+html: {include: "zant_book_guess2.html"} 
+}],
+
+["vash_shoe_guess2", "Form", { 
+html: {include: "vash_shoe_guess2.html"} 
+}],
+
+["tiz_thing_guess2", "Form", { 
+html: {include: "tiz_thing_guess2.html"} 
+}],
+
+["geck_nose_guess2", "Form", { 
+html: {include: "geck_nose_guess2.html"} 
+}],
+
+["telpen_ball_guess2", "Form", { 
+html: {include: "telpen_ball_guess2.html"} 
+}],
+
+["blime_toy_guess2", "Form", { 
+html: {include: "blime_toy_guess2.html"} 
+}],
+
+["mipen_bag_guess2", "Form", { 
+html: {include: "mipen_bag_guess2.html"} 
+}],
+
+["bist_horse_guess2", "Form", { 
+html: {include: "bist_horse_guess2.html"} 
+}],
+
+["tula_mommy_guess2", "Form", { 
+html: {include: "tula_mommy_guess2.html"} 
+}],
+
+["doon_necklace_guess2", "Form", { 
+html: {include: "doon_necklace_guess2.html"} 
+}],
+
+["tace_phone_guess2", "Form", { 
+html: {include: "tace_phone_guess2.html"} 
+}],
+
+["jair_time_guess2", "Form", { 
+html: {include: "jair_time_guess2.html"} 
+}],
+
+["zant_book_guess2", "Form", { 
+html: {include: "zant_book_guess2.html"} 
+}],
+
+["vash_shoe_guess2", "Form", { 
+html: {include: "vash_shoe_guess2.html"} 
+}],
+
+["tiz_thing_guess2", "Form", { 
+html: {include: "tiz_thing_guess2.html"} 
+}],
+
+["geck_nose_guess2", "Form", { 
+html: {include: "geck_nose_guess2.html"} 
+}],
+
+["telpen_ball_guess2", "Form", { 
+html: {include: "telpen_ball_guess2.html"} 
+}],
+
+["blime_toy_guess2", "Form", { 
+html: {include: "blime_toy_guess2.html"} 
+}],
+
+["mipen_bag_guess2", "Form", { 
+html: {include: "mipen_bag_guess2.html"} 
+}],
+
+["bist_horse_guess2", "Form", { 
+html: {include: "bist_horse_guess2.html"} 
+}],
+
+["tula_mommy_guess2", "Form", { 
+html: {include: "tula_mommy_guess2.html"} 
+}],
+
+["doon_necklace_guess2", "Form", { 
+html: {include: "doon_necklace_guess2.html"} 
+}],
+
+["tace_phone_guess2", "Form", { 
+html: {include: "tace_phone_guess2.html"} 
+}],
+
+["jair_time_guess2", "Form", { 
+html: {include: "jair_time_guess2.html"} 
+}],
+
+["zant_book_guess2", "Form", { 
+html: {include: "zant_book_guess2.html"} 
+}],
+
+["vash_shoe_guess2", "Form", { 
+html: {include: "vash_shoe_guess2.html"} 
+}],
+
+["tiz_thing_guess2", "Form", { 
+html: {include: "tiz_thing_guess2.html"} 
+}],
+
+["geck_nose_guess2", "Form", { 
+html: {include: "geck_nose_guess2.html"} 
+}],
+
+["telpen_ball_guess2", "Form", { 
+html: {include: "telpen_ball_guess2.html"} 
+}],
+
+["blime_toy_guess2", "Form", { 
+html: {include: "blime_toy_guess2.html"} 
+}],
+
+["mipen_bag_guess2", "Form", { 
+html: {include: "mipen_bag_guess2.html"} 
+}],
+
+["bist_horse_guess2", "Form", { 
+html: {include: "bist_horse_guess2.html"} 
+}],
+
+["tula_mommy_guess2", "Form", { 
+html: {include: "tula_mommy_guess2.html"} 
+}],
+
+["doon_necklace_guess2", "Form", { 
+html: {include: "doon_necklace_guess2.html"} 
+}],
+
+["tace_phone_guess2", "Form", { 
+html: {include: "tace_phone_guess2.html"} 
+}],
+
+["jair_time_guess2", "Form", { 
+html: {include: "jair_time_guess2.html"} 
+}],
+
+["zant_book_guess2", "Form", { 
+html: {include: "zant_book_guess2.html"} 
+}],
+
+["vash_shoe_guess2", "Form", { 
+html: {include: "vash_shoe_guess2.html"} 
+}],
+
+["tiz_thing_guess2", "Form", { 
+html: {include: "tiz_thing_guess2.html"} 
+}],
+
+["geck_nose_guess2", "Form", { 
+html: {include: "geck_nose_guess2.html"} 
+}],
+
+["telpen_ball_guess2", "Form", { 
+html: {include: "telpen_ball_guess2.html"} 
+}],
+
+["blime_toy_guess2", "Form", { 
+html: {include: "blime_toy_guess2.html"} 
+}],
+
+["mipen_bag_guess3", "Form", { 
+html: {include: "mipen_bag_guess3.html"} 
+}],
+
+["bist_horse_guess3", "Form", { 
+html: {include: "bist_horse_guess3.html"} 
+}],
+
+["tula_mommy_guess3", "Form", { 
+html: {include: "tula_mommy_guess3.html"} 
+}],
+
+["doon_necklace_guess3", "Form", { 
+html: {include: "doon_necklace_guess3.html"} 
+}],
+
+["tace_phone_guess3", "Form", { 
+html: {include: "tace_phone_guess3.html"} 
+}],
+
+["jair_time_guess3", "Form", { 
+html: {include: "jair_time_guess3.html"} 
+}],
+
+["zant_book_guess3", "Form", { 
+html: {include: "zant_book_guess3.html"} 
+}],
+
+["vash_shoe_guess3", "Form", { 
+html: {include: "vash_shoe_guess3.html"} 
+}],
+
+["tiz_thing_guess3", "Form", { 
+html: {include: "tiz_thing_guess3.html"} 
+}],
+
+["geck_nose_guess3", "Form", { 
+html: {include: "geck_nose_guess3.html"} 
+}],
+
+["telpen_ball_guess3", "Form", { 
+html: {include: "telpen_ball_guess3.html"} 
+}],
+
+["blime_toy_guess3", "Form", { 
+html: {include: "blime_toy_guess3.html"} 
+}],
+
+["mipen_bag_guess3", "Form", { 
+html: {include: "mipen_bag_guess3.html"} 
+}],
+
+["bist_horse_guess3", "Form", { 
+html: {include: "bist_horse_guess3.html"} 
+}],
+
+["tula_mommy_guess3", "Form", { 
+html: {include: "tula_mommy_guess3.html"} 
+}],
+
+["doon_necklace_guess3", "Form", { 
+html: {include: "doon_necklace_guess3.html"} 
+}],
+
+["tace_phone_guess3", "Form", { 
+html: {include: "tace_phone_guess3.html"} 
+}],
+
+["jair_time_guess3", "Form", { 
+html: {include: "jair_time_guess3.html"} 
+}],
+
+["zant_book_guess3", "Form", { 
+html: {include: "zant_book_guess3.html"} 
+}],
+
+["vash_shoe_guess3", "Form", { 
+html: {include: "vash_shoe_guess3.html"} 
+}],
+
+["tiz_thing_guess3", "Form", { 
+html: {include: "tiz_thing_guess3.html"} 
+}],
+
+["geck_nose_guess3", "Form", { 
+html: {include: "geck_nose_guess3.html"} 
+}],
+
+["telpen_ball_guess3", "Form", { 
+html: {include: "telpen_ball_guess3.html"} 
+}],
+
+["blime_toy_guess3", "Form", { 
+html: {include: "blime_toy_guess3.html"} 
+}],
+
+["mipen_bag_guess3", "Form", { 
+html: {include: "mipen_bag_guess3.html"} 
+}],
+
+["bist_horse_guess3", "Form", { 
+html: {include: "bist_horse_guess3.html"} 
+}],
+
+["tula_mommy_guess3", "Form", { 
+html: {include: "tula_mommy_guess3.html"} 
+}],
+
+["doon_necklace_guess3", "Form", { 
+html: {include: "doon_necklace_guess3.html"} 
+}],
+
+["tace_phone_guess3", "Form", { 
+html: {include: "tace_phone_guess3.html"} 
+}],
+
+["jair_time_guess3", "Form", { 
+html: {include: "jair_time_guess3.html"} 
+}],
+
+["zant_book_guess3", "Form", { 
+html: {include: "zant_book_guess3.html"} 
+}],
+
+["vash_shoe_guess3", "Form", { 
+html: {include: "vash_shoe_guess3.html"} 
+}],
+
+["tiz_thing_guess3", "Form", { 
+html: {include: "tiz_thing_guess3.html"} 
+}],
+
+["geck_nose_guess3", "Form", { 
+html: {include: "geck_nose_guess3.html"} 
+}],
+
+["telpen_ball_guess3", "Form", { 
+html: {include: "telpen_ball_guess3.html"} 
+}],
+
+["blime_toy_guess3", "Form", { 
+html: {include: "blime_toy_guess3.html"} 
+}],
+
+["mipen_bag_guess3", "Form", { 
+html: {include: "mipen_bag_guess3.html"} 
+}],
+
+["bist_horse_guess3", "Form", { 
+html: {include: "bist_horse_guess3.html"} 
+}],
+
+["tula_mommy_guess3", "Form", { 
+html: {include: "tula_mommy_guess3.html"} 
+}],
+
+["doon_necklace_guess3", "Form", { 
+html: {include: "doon_necklace_guess3.html"} 
+}],
+
+["tace_phone_guess3", "Form", { 
+html: {include: "tace_phone_guess3.html"} 
+}],
+
+["jair_time_guess3", "Form", { 
+html: {include: "jair_time_guess3.html"} 
+}],
+
+["zant_book_guess3", "Form", { 
+html: {include: "zant_book_guess3.html"} 
+}],
+
+["vash_shoe_guess3", "Form", { 
+html: {include: "vash_shoe_guess3.html"} 
+}],
+
+["tiz_thing_guess3", "Form", { 
+html: {include: "tiz_thing_guess3.html"} 
+}],
+
+["geck_nose_guess3", "Form", { 
+html: {include: "geck_nose_guess3.html"} 
+}],
+
+["telpen_ball_guess3", "Form", { 
+html: {include: "telpen_ball_guess3.html"} 
+}],
+
+["blime_toy_guess3", "Form", { 
+html: {include: "blime_toy_guess3.html"} 
+}],
+
+["mipen_bag_guess3", "Form", { 
+html: {include: "mipen_bag_guess3.html"} 
+}],
+
+["bist_horse_guess3", "Form", { 
+html: {include: "bist_horse_guess3.html"} 
+}],
+
+["tula_mommy_guess3", "Form", { 
+html: {include: "tula_mommy_guess3.html"} 
+}],
+
+["doon_necklace_guess3", "Form", { 
+html: {include: "doon_necklace_guess3.html"} 
+}],
+
+["tace_phone_guess3", "Form", { 
+html: {include: "tace_phone_guess3.html"} 
+}],
+
+["jair_time_guess3", "Form", { 
+html: {include: "jair_time_guess3.html"} 
+}],
+
+["zant_book_guess3", "Form", { 
+html: {include: "zant_book_guess3.html"} 
+}],
+
+["vash_shoe_guess3", "Form", { 
+html: {include: "vash_shoe_guess3.html"} 
+}],
+
+["tiz_thing_guess3", "Form", { 
+html: {include: "tiz_thing_guess3.html"} 
+}],
+
+["geck_nose_guess3", "Form", { 
+html: {include: "geck_nose_guess3.html"} 
+}],
+
+["telpen_ball_guess3", "Form", { 
+html: {include: "telpen_ball_guess3.html"} 
+}],
+
+["blime_toy_guess3", "Form", { 
+html: {include: "blime_toy_guess3.html"} 
+}],
+
+["mipen_bag_guess4", "Form", { 
+html: {include: "mipen_bag_guess4.html"} 
+}],
+
+["bist_horse_guess4", "Form", { 
+html: {include: "bist_horse_guess4.html"} 
+}],
+
+["tula_mommy_guess4", "Form", { 
+html: {include: "tula_mommy_guess4.html"} 
+}],
+
+["doon_necklace_guess4", "Form", { 
+html: {include: "doon_necklace_guess4.html"} 
+}],
+
+["tace_phone_guess4", "Form", { 
+html: {include: "tace_phone_guess4.html"} 
+}],
+
+["jair_time_guess4", "Form", { 
+html: {include: "jair_time_guess4.html"} 
+}],
+
+["zant_book_guess4", "Form", { 
+html: {include: "zant_book_guess4.html"} 
+}],
+
+["vash_shoe_guess4", "Form", { 
+html: {include: "vash_shoe_guess4.html"} 
+}],
+
+["tiz_thing_guess4", "Form", { 
+html: {include: "tiz_thing_guess4.html"} 
+}],
+
+["geck_nose_guess4", "Form", { 
+html: {include: "geck_nose_guess4.html"} 
+}],
+
+["telpen_ball_guess4", "Form", { 
+html: {include: "telpen_ball_guess4.html"} 
+}],
+
+["blime_toy_guess4", "Form", { 
+html: {include: "blime_toy_guess4.html"} 
+}],
+
+["mipen_bag_guess4", "Form", { 
+html: {include: "mipen_bag_guess4.html"} 
+}],
+
+["bist_horse_guess4", "Form", { 
+html: {include: "bist_horse_guess4.html"} 
+}],
+
+["tula_mommy_guess4", "Form", { 
+html: {include: "tula_mommy_guess4.html"} 
+}],
+
+["doon_necklace_guess4", "Form", { 
+html: {include: "doon_necklace_guess4.html"} 
+}],
+
+["tace_phone_guess4", "Form", { 
+html: {include: "tace_phone_guess4.html"} 
+}],
+
+["jair_time_guess4", "Form", { 
+html: {include: "jair_time_guess4.html"} 
+}],
+
+["zant_book_guess4", "Form", { 
+html: {include: "zant_book_guess4.html"} 
+}],
+
+["vash_shoe_guess4", "Form", { 
+html: {include: "vash_shoe_guess4.html"} 
+}],
+
+["tiz_thing_guess4", "Form", { 
+html: {include: "tiz_thing_guess4.html"} 
+}],
+
+["geck_nose_guess4", "Form", { 
+html: {include: "geck_nose_guess4.html"} 
+}],
+
+["telpen_ball_guess4", "Form", { 
+html: {include: "telpen_ball_guess4.html"} 
+}],
+
+["blime_toy_guess4", "Form", { 
+html: {include: "blime_toy_guess4.html"} 
+}],
+
+["mipen_bag_guess4", "Form", { 
+html: {include: "mipen_bag_guess4.html"} 
+}],
+
+["bist_horse_guess4", "Form", { 
+html: {include: "bist_horse_guess4.html"} 
+}],
+
+["tula_mommy_guess4", "Form", { 
+html: {include: "tula_mommy_guess4.html"} 
+}],
+
+["doon_necklace_guess4", "Form", { 
+html: {include: "doon_necklace_guess4.html"} 
+}],
+
+["tace_phone_guess4", "Form", { 
+html: {include: "tace_phone_guess4.html"} 
+}],
+
+["jair_time_guess4", "Form", { 
+html: {include: "jair_time_guess4.html"} 
+}],
+
+["zant_book_guess4", "Form", { 
+html: {include: "zant_book_guess4.html"} 
+}],
+
+["vash_shoe_guess4", "Form", { 
+html: {include: "vash_shoe_guess4.html"} 
+}],
+
+["tiz_thing_guess4", "Form", { 
+html: {include: "tiz_thing_guess4.html"} 
+}],
+
+["geck_nose_guess4", "Form", { 
+html: {include: "geck_nose_guess4.html"} 
+}],
+
+["telpen_ball_guess4", "Form", { 
+html: {include: "telpen_ball_guess4.html"} 
+}],
+
+["blime_toy_guess4", "Form", { 
+html: {include: "blime_toy_guess4.html"} 
+}],
+
+["mipen_bag_guess4", "Form", { 
+html: {include: "mipen_bag_guess4.html"} 
+}],
+
+["bist_horse_guess4", "Form", { 
+html: {include: "bist_horse_guess4.html"} 
+}],
+
+["tula_mommy_guess4", "Form", { 
+html: {include: "tula_mommy_guess4.html"} 
+}],
+
+["doon_necklace_guess4", "Form", { 
+html: {include: "doon_necklace_guess4.html"} 
+}],
+
+["tace_phone_guess4", "Form", { 
+html: {include: "tace_phone_guess4.html"} 
+}],
+
+["jair_time_guess4", "Form", { 
+html: {include: "jair_time_guess4.html"} 
+}],
+
+["zant_book_guess4", "Form", { 
+html: {include: "zant_book_guess4.html"} 
+}],
+
+["vash_shoe_guess4", "Form", { 
+html: {include: "vash_shoe_guess4.html"} 
+}],
+
+["tiz_thing_guess4", "Form", { 
+html: {include: "tiz_thing_guess4.html"} 
+}],
+
+["geck_nose_guess4", "Form", { 
+html: {include: "geck_nose_guess4.html"} 
+}],
+
+["telpen_ball_guess4", "Form", { 
+html: {include: "telpen_ball_guess4.html"} 
+}],
+
+["blime_toy_guess4", "Form", { 
+html: {include: "blime_toy_guess4.html"} 
+}],
+
+["mipen_bag_guess4", "Form", { 
+html: {include: "mipen_bag_guess4.html"} 
+}],
+
+["bist_horse_guess4", "Form", { 
+html: {include: "bist_horse_guess4.html"} 
+}],
+
+["tula_mommy_guess4", "Form", { 
+html: {include: "tula_mommy_guess4.html"} 
+}],
+
+["doon_necklace_guess4", "Form", { 
+html: {include: "doon_necklace_guess4.html"} 
+}],
+
+["tace_phone_guess4", "Form", { 
+html: {include: "tace_phone_guess4.html"} 
+}],
+
+["jair_time_guess4", "Form", { 
+html: {include: "jair_time_guess4.html"} 
+}],
+
+["zant_book_guess4", "Form", { 
+html: {include: "zant_book_guess4.html"} 
+}],
+
+["vash_shoe_guess4", "Form", { 
+html: {include: "vash_shoe_guess4.html"} 
+}],
+
+["tiz_thing_guess4", "Form", { 
+html: {include: "tiz_thing_guess4.html"} 
+}],
+
+["geck_nose_guess4", "Form", { 
+html: {include: "geck_nose_guess4.html"} 
+}],
+
+["telpen_ball_guess4", "Form", { 
+html: {include: "telpen_ball_guess4.html"} 
+}],
+
+["blime_toy_guess4", "Form", { 
+html: {include: "blime_toy_guess4.html"} 
+}],
+
+["end", "Form", {
+        html: {include: "end.html"},
+        hideProgressBar: true,
+        countsForProgressBar: false
+    
     }]
-
 ];

@@ -128,10 +128,7 @@ def generate_items(config_file):
     \n\
     }]\n\
 ];"
-    output += begin
-    output += "\n"
-    output += generate_forms(config_file)
-    output += end
+    output += begin + "\n" + generate_forms(config_file) + end
     return output
 
 
@@ -150,7 +147,7 @@ def generate_html(config_file, dir_prefix):
             for word in word_list:
                 mystery_word = "\"{}\"".format(word.split('_')[0].upper())
                 fname = "{}_guess{}".format(word, i)
-                with open("{}/{}.html".format(dir_prefix,fname), 'wb+') as html:
+                with open("{}/chunk_includes/{}.html".format(dir_prefix,fname), 'wb+') as html:
                     middle = "<style>\n\
     label {\n\
         display: inline-block;\n\
@@ -169,7 +166,7 @@ def generate_html(config_file, dir_prefix):
 <table cellpadding=\"10\" cellspacing=\"4\">\n\
 <tr>\n\
   <td>%s<br>\n\
-  Guess %s:<input name=\"guess\" type=\"text\" size=\"40\" %s placeholder=\"%s\"/></td>\n\
+  Guess %s: <input name=\"guess\" type=\"text\" size=\"40\" %s placeholder=\"%s\"/></td>\n\
 </tr>\n\
 <tr class=\"bordered\">\n\
     <td>\n\
@@ -191,7 +188,8 @@ def generate_html(config_file, dir_prefix):
                     html.write(output)
                     output = ""
 
-def generate_experimentjs(config_file):
+
+def generate_experimentjs(config_file, dir_prefix):
     output = ""
     begin = "// functions for generating followup links and emails\n\
 var email;\n\
@@ -215,17 +213,22 @@ function print_link(){\n\
 \n\
 //\n\
 \n"
-    output += begin
-    output += generate_shuffle_sequence(config_file)
-    output += "\n\n"
-    output += generate_defaults()
-    output += "\n\n"
-    output += generate_items(config_file)
-    return output
+    output += begin + generate_shuffle_sequence(config_file) + "\n\n" + generate_defaults() + "\n\n" + generate_items(config_file)
+    # return output
+    with open('{}/data_includes/experiment.js'.format(dir_prefix), 'wb+') as experiment_js:
+        experiment_js.write(output)
 
 
 def generate_followupjs():
     pass
 
 
-generate_html(hf_order_a_config,"U:/Experiments/sleepHSP/chunk_includes")
+def generate_part1(config_file, dir_prefix):
+    generate_html(config_file, dir_prefix)
+    generate_experimentjs(config_file, dir_prefix)
+
+
+def generate_part2(results_file, dir_prefix):
+    pass
+
+generate_part1(hf_order_a_config, 'U:/Experiments/sleepHSP')
