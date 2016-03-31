@@ -61,3 +61,4 @@ penn_shield.png
 *.wav
 *.mp3
 processing_scripts/create3401mp3.py
+*.csv
