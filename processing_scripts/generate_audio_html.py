@@ -1,30 +1,36 @@
-tula = ['tula',"https://upenn.box.com/shared/static/arwlug5ut8q0oqjyzqw2jgojsilbb8by.wav"]
+sound_url_prefix = "http://www.sas.upenn.edu/~tjdawson/Experiments/sleepHSP/followup/sounds/"
+sound_url_affix = "_doubled.mp3"
 
-vash = ['vash',"https://upenn.box.com/shared/static/7vf20edesh09vhpu0gvsmwad10rh8w1g.wav"]
+test = "3401"
 
-zant = ['zant',"https://upenn.box.com/shared/static/0m1fbrf3mbxye03u51hkt7068yzt97f9.wav"]
+bist = "bist"
 
-bist = ['bist',"https://upenn.box.com/shared/static/6iy4bryf47tfbnezw99up11nyct0pc1n.wav"]
+blime = "blime"
 
-blime = ['blime',"https://upenn.box.com/shared/static/rjxbpmsx3c0bvsv70d7tvzzm5qkga75w.wav"]
+doon = "doon"
 
-doon = ['doon',"https://upenn.box.com/shared/static/fqealhm7q2yjf30r8bnplkgaig02un92.wav"]
+geck = "geck"
 
-geck = ['geck',"https://upenn.box.com/shared/static/feiw0gciwv9la1dn8eua246s3tetjnqa.wav"]
+jair = "jair"
 
-jair = ['jair',"https://upenn.box.com/shared/static/t23mlw61gcj87nd284qgbt1pljxyxw67.wav"]
+mipen = "mipen"
 
-mipen = ['mipen',"https://upenn.box.com/shared/static/abiqfpvizk2cw3wx2jac1x1ng1t3bia5.wav"]
+tace = "tace"
 
-tace = ['tace',"https://upenn.box.com/shared/static/lbdk700uiok9ksaspjubxdx4tr99duyr.wav"]
+telpen = "telpen"
 
-telpen = ['telpen',"https://upenn.box.com/shared/static/iwftdmu55c7zl8j5mhvt6d7exhphzgb9.wav"]
+tiz = "tiz"
 
-tiz = ['tiz',"https://upenn.box.com/shared/static/pvd098eua5f22407esf75k20hk12pn9f.wav"]
+tula = "tula"
 
-sounds = [bist,blime,doon,geck,jair,mipen,tace,telpen,tiz,tula,vash,zant]
+vash = "vash"
 
-for sound in sounds:
+zant = "zant"
+
+mp3_list = [bist, blime, doon, geck, jair, mipen, tace, telpen, tiz, tula, vash, zant, test]
+mp3_list = [[x,"{}{}{}".format(sound_url_prefix,x,sound_url_affix)] for x in mp3_list]
+
+for mp3 in mp3_list:
 
     audio_html = "<div align=\"center\"> \n" \
                  "\t<audio controls> \n" \
@@ -32,5 +38,5 @@ for sound in sounds:
                  "\t\t<source src=\"{}\" type=\"audio/wav\"> \n" \
                  "\t\tYour browser does not support the audio element.\n" \
                  "\t</audio> \n" \
-                 "</div>".format(sound[0],sound[1])
+                 "</div>".format(mp3[0], mp3[1])
     print audio_html
