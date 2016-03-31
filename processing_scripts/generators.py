@@ -17,7 +17,7 @@ def generate_shuffle_sequence(config_file):
 
     with open(config_file, 'rb+') as config_file:
         config_file = csv.reader(config_file)
-        next(config_file, None) # skip header
+        next(config_file, None)  # skip header
         config_file = list(config_file)
 
         for n, line in enumerate(config_file):
@@ -40,8 +40,8 @@ def generate_forms(config_file):
         word_list = ["{}_{}".format(row[2].lower(), row[3].lower()) for row in config_file]
         output=""
 
-        for i in range(5):
-            for word in word_list:
+        for word in word_list:
+            for i in range(5):
                 guess = "[\"%s_guess%s\", \"Form\", { \nhtml: {include: \"%s_guess%s.html\"} \n}]," % (word, i, word, i)
                 output += guess + "\n\n"
         return output
@@ -231,4 +231,5 @@ def generate_part1(config_file, dir_prefix):
 def generate_part2(results_file, dir_prefix):
     pass
 
+# print generate_forms(hf_order_a_config)
 generate_part1(hf_order_a_config, 'U:/Experiments/sleepHSP')
