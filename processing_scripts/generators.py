@@ -37,9 +37,12 @@ def generate_forms(config_file):
         next(config_file, None)  # skip header
         config_file = list(config_file)
 
-        word_list = ["{}_{}".format(row[2].lower(), row[3].lower()) for row in config_file]
-        output=""
+        word_list = set()
+        for row in config_file:
+            word_list.add("{}_{}".format(row[2].lower(), row[3].lower()))
 
+        output = ""
+        word_list = list(word_list)
         for word in word_list:
             for i in range(5):
                 guess = "[\"%s_guess%s\", \"Form\", { \nhtml: {include: \"%s_guess%s.html\"} \n}]," % (word, i, word, i)
