@@ -1,4 +1,6 @@
 import csv
+import itertools
+import string
 
 hf_order_a_config, hf_order_b_config, \
     hl_order_a_config, hl_order_b_config = "U:/Experiments/sleepHSP/processing_scripts/config/hf_order_a.csv", \
@@ -226,13 +228,17 @@ def generate_followupjs():
     pass
 
 
-def generate_part1(config_file, dir_prefix):
-    generate_html(config_file, dir_prefix)
-    generate_experimentjs(config_file, dir_prefix)
+def generate_part1(config_file, num_guesses, dir_prefix, video=False):
+    """Input: a csv file, the number of guesses allowed per item,
+    and the path to the root directory for the experiment
+        Optional: specify whether to generate html for displaying video
+    Output: in the directory specified, the files for an ibex HSP experiment"""
+    generate_html(config_file, num_guesses, dir_prefix)
+    generate_experimentjs(config_file, num_guesses, dir_prefix)
 
 
 def generate_part2(results_file, dir_prefix):
     pass
 
-# print generate_forms(hf_order_a_config)
-generate_part1(hf_order_a_config, 'U:/Experiments/sleepHSP')
+print generate_forms(hf_order_a_config)
+# generate_part1(hf_order_a_config, 'U:/Experiments/sleepHSP')
