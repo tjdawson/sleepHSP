@@ -224,10 +224,6 @@ function print_link(){\n\
         experiment_js.write(output)
 
 
-def generate_followupjs():
-    pass
-
-
 def generate_part1(config_file, num_guesses, dir_prefix, video=False):
     """Input: a csv file, the number of guesses allowed per item,
     and the path to the root directory for the experiment
@@ -236,9 +232,6 @@ def generate_part1(config_file, num_guesses, dir_prefix, video=False):
     generate_html(config_file, num_guesses, dir_prefix)
     generate_experimentjs(config_file, num_guesses, dir_prefix)
 
-
-def generate_part2(results_file, dir_prefix):
-    pass
 
 print generate_forms(hf_order_a_config)
 # generate_part1(hf_order_a_config, 'U:/Experiments/sleepHSP')
