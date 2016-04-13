@@ -94,7 +94,7 @@ def generate_part2_dict(ibex_data, unique_id):
         subj_dict = {}
         guess_and_confidence = []
 
-        previous_line = ['','','','','','','','','']
+        previous_line = ['', '', '', '', '', '', '', '', '']
         trial_identifier = 5
         mystery_word, target_word, guess, confidence = 0, 1, 2, 2
 
@@ -107,10 +107,12 @@ def generate_part2_dict(ibex_data, unique_id):
                 previous_line_info = previous_line[trial_identifier].split("_")
 
                 if (current_line_info[target_word], current_line_info[mystery_word]) not in subj_dict:
-                    subj_dict[(current_line_info[target_word], current_line_info[mystery_word])] = [(previous_line[8], current_line[8])]
+                    subj_dict[(current_line_info[target_word], current_line_info[mystery_word])] = [
+                        (previous_line[8], current_line[8])]
                 else:
                     if (current_line_info[target_word], current_line_info[mystery_word]) in subj_dict:
-                        subj_dict[(current_line_info[target_word], current_line_info[mystery_word])] += [(previous_line[8], current_line[8])]
+                        subj_dict[(current_line_info[target_word], current_line_info[mystery_word])] += [
+                            (previous_line[8], current_line[8])]
 
             previous_line = current_line
 
@@ -126,7 +128,8 @@ def generate_part2_dict(ibex_data, unique_id):
             guesses = []
 
             for gc in g_c_reversed:
-                lemmatized_guess = lemmy.lemmatize(gc[0].strip().decode('unicode_escape').encode('ascii', 'ignore'), pos='n')
+                lemmatized_guess = lemmy.lemmatize(gc[0].strip().decode('unicode_escape').encode('ascii', 'ignore'),
+                                                   pos='n')
                 lemmatized_guess = lemmatized_guess.encode('utf-8')
                 if lemmatized_guess == 'horsey':
                     lemmatized_guess = 'horse'
@@ -155,9 +158,9 @@ def random_dict_value(input_dict, value_index, check_value):
 def gen_part2_shuffle_sequence(pt2_dict):
     """Input: the dict from part 2
     output: shuffle sequence as a string; list of words to generate forms"""
-    shuffle_sequence_begin = "var shuffleSequence = seq(\"intro\", \"intro1\", \"intro2\", \"intro3\", \"sep\", \n"
+    shuffle_sequence_begin = "var shuffleSequence = seq(\"intro\", \"intro1\", \"sep\", \n"
     shuffle_sequence_middle = ""
-    shuffle_sequence_end = "\"end\"\n);"
+    shuffle_sequence_end = "\"outro1\",\"sr\",\"outro2\",\n);"
     sep = "\"sep\",\n"
 
     to_add_to_middle = []
@@ -195,8 +198,8 @@ def generate_defaults():
     return "var defaults = [\n\
         \"Separator\", {\n\
             transfer: \"keypress\",\n\
-            normalMessage: \"Please look up at the display on the wall and watch the video. When it's finished, press any key to start guessing.\",\n\
-            errorMessage: \"Please wait for the video to finish. Then, press any key to start guessing.\"\n\
+            normalMessage: \"Press any key to continue.\",\n\
+            errorMessage: \"Press any key to continue.\"\n\
         },\n\
         \"DashedSentence\", {\n\
             mode: \"self-paced reading\"\n\
@@ -223,8 +226,8 @@ def generate_defaults():
 
 def generate_part2_items(pt2_dict):
     output = ""
-    begin = "var items = [\n\
-        [\"sep\", \"Separator\", { }],\n\
+    begin = "var items = [    [\"sr\", \"__SendResults__\", { }],\n"\
+        "[\"sep\", \"Separator\", { }],\n\
         \n\
         //\n\
         \n\
@@ -251,8 +254,8 @@ def generate_part2_items(pt2_dict):
         \n\
         //\n\
         \n\
-        [\"intro2\", \"Form\", {\n\
-            html: {include: \"intro2.html\"},\n\
+        [\"outro1\", \"Form\", {\n\
+            html: {include: \"outro1.html\"},\n\
             hideProgressBar: true,\n\
             countsForProgressBar: false\n\
         \n\
@@ -260,13 +263,10 @@ def generate_part2_items(pt2_dict):
         \n\
         //\n\
         \n\
-        [\"intro3\", \"Form\", {\n\
-            html: { include: \"intro3.html\" },\n\
+        [\"outro2\", \"Form\", {\n\
+            html: { include: \"outro2.html\" },\n\
             hideProgressBar: true,\n\
             countsForProgressBar: false,\n\
-            validators: {\n\
-                age: function (s) { if (s.match(/^\d+$/)) return true; else return \"Bad value for \u2018age\u2019\"; }\n\
-            }\n\
         } ],\n\
         \n\
         //"
@@ -289,40 +289,87 @@ def generate_part2_html(words_list, dir_prefix):
         print fname
         split_fname = fname.split("_")
         mystery, test_word = split_fname[1], split_fname[2]
-        src = sound_url_prefix+mystery+sound_url_affix
-        audio_html = "<div align=\"center\"> \n" \
-                     "\t<audio controls id=\"myaudio\"> \n" \
-                     "\t\t<source src=\"{}\" type=\"audio/wav\"> \n" \
+        src = sound_url_prefix + mystery + sound_url_affix
+        audio_html = "<style>\n\
+    label {\n\
+        display: inline-block;\n\
+        margin-bottom: 8px;\n\
+    }\n\
+    a.left {\n\
+        padding-right: 5px;\n\
+    }\n\
+    a.right {\n\
+        padding-left: 5px;\n\
+    }\n\
+</style>\n\
+<div align=\"center\"> \n" \
+                     "\t<audio id=\"myaudio\"> \n" \
+                     "\t\t<source src=\"%s\" type=\"audio/wav\"> \n" \
                      "\t\tYour browser does not support the audio element.\n" \
                      "\t</audio> \n" \
-                     "\t\t<div id=\"questionDiv\" style=\"visibility: hidden;\">Does {} mean {}?" \
-                     "<input type </div> \n" \
-                     "</div>" \
-                     "<script type=\"text/javascript\">\
-  var audio = document.getElementById(\'myaudio\');\
-   audio.addEventListener(\"ended\", function() {\
-   document.getElementById(\"questionDiv\").style.visibility = \"visible\";\
-   audio.currentTime = 0;\
-});     \
-audio.play();\
-  </script>".format(src,mystery.upper(),test_word.upper())
-        print audio_html + "\n\n\n"
-        # with open("{}/chunk_includes/{}".format(dir_prefix, fname), 'wb+') as html:
+                     "\t\t<div id=\"questionDiv\" style=\"visibility: hidden;\"><table cellpadding=\"10\" cellspacing=\"4\">\n\
+<tr>\n\
+  <td>Does %s mean %s?<br>\n\
+</tr>\n\
+<tr class=\"bordered\">\n\
+    <td>\n        " \
+                     "<label for=\"yes\"><input type=\"radio\" id=\"yes\" name=\"yes_or_no\" value=\"Yes\" class=\"obligatory\"><span>Yes</span></label>\n" \
+                     "<label for=\"no\"><input type=\"radio\" id=\"no\" name=\"yes_or_no\" value=\"No\"><span>No</span></label>\n" \
+                     "</td>\n\
+</tr>" \
+                     "<tr class=\"bordered\">\n\
+    <td>\n\
+        <a class=\"left\">Not at all confident</a>\n\
+        <label for=\"conf1\"><input type=\"radio\" id=\"conf1\" name=\"confidence\" value=\"1\" class=\"obligatory\"><span>1</span></label>\n\
+        <label for=\"conf2\"><input type=\"radio\" id=\"conf2\" name=\"confidence\" value=\"2\"><span>2</span></label>\n\
+        <label for=\"conf3\"><input type=\"radio\" id=\"conf3\" name=\"confidence\" value=\"3\"><span>3</span></label>\n\
+        <label for=\"conf4\"><input type=\"radio\" id=\"conf4\" name=\"confidence\" value=\"4\"><span>4</span></label>\n\
+        <label for=\"conf5\"><input type=\"radio\" id=\"conf5\" name=\"confidence\" value=\"5\"><span>5</span></label>\n\
+        <a class=\"right\">Very confident </a>\n\
+    </td>\n\
+</tr>\n\n\
+\n\
+\n\
+</table>\n" \
+                     "</div>\n" \
+                     "<script type=\"text/javascript\">\n\
+  var audio = document.getElementById(\'myaudio\');\n\
+   audio.addEventListener(\"ended\", function() {\n\
+   document.getElementById(\"questionDiv\").style.visibility = \"visible\";\n\
+   audio.currentTime = 0;\n\
+});     \n\
+audio.play();\n\
+</script>" % (src, mystery.upper(), test_word.upper())
+        # print audio_html + "\n\n\n"
+        with open("{}/chunk_includes/{}".format(dir_prefix, fname), 'wb+') as html:
+            html.write(audio_html)
 
 
 def generate_followup_js(pt2_dict, dir_prefix):
-    pass
+    output = "var manualSendResults = true; \n"
+
+    output += gen_part2_shuffle_sequence(pt2_dict) + "\n\n" + generate_defaults() + "\n\n" + generate_part2_items(pt2_dict)
+    with open('{}/data_includes/experiment.js'.format(dir_prefix), 'wb+') as experiment_js:
+        experiment_js.write(output)
 
 
-def generate_part2(pt2_dict, dir_prefix):
-    pass
+def generate_part2(results, subj_id, dir_prefix):
+    part2_dict = generate_part2_dict(results, subj_id)
+    generate_part2_html(gen_part2_shuffle_sequence(part2_dict)[1], dir_prefix)
+    generate_followup_js(part2_dict, dir_prefix)
+
+# AMPMHFa_m001results = "U:/Experiments/sleepHSP followup/followups/AMPMHFa_m001/results.csv"
+# AMPMHFa_m002results = "U:/Experiments/sleepHSP followup/followups/AMPMHFa_m002/results.csv"
 
 
-mp3_dict = create_mp3_dict()
+PMAMHFa_m001results = "U:/Experiments/sleepHSP followup/followups/PMAMHFa_m001/results.csv"
+PMAMHFa_m002results = "U:/Experiments/sleepHSP followup/followups/PMAMHFa_m002/results.csv"
 
-# print generate_part2_dict(results)
-# print gen_part2_shuffle_sequence(generate_part2_dict(results, test_id))
-# print generate_part2_forms(gen_part2_shuffle_sequence(generate_part2_dict(results, test_id))[1])
-part2_dict = generate_part2_dict(results, test_id)
+PMAMHFa_m001prefix = "U:/Experiments/sleepHSP followup/followups/PMAMHFa_m001/"
+PMAMHFa_m002prefix = "U:/Experiments/sleepHSP followup/followups/PMAMHFa_m002/"
 
-generate_part2_html(gen_part2_shuffle_sequence(part2_dict)[1], "")
+PMAMHFa_m001 = "PMAMHFa_m001"
+PMAMHFa_m002 = "PMAMHFa_m002"
+
+generate_part2(PMAMHFa_m001results, PMAMHFa_m001,PMAMHFa_m001prefix)
+generate_part2(PMAMHFa_m002results, PMAMHFa_m002,PMAMHFa_m002prefix)

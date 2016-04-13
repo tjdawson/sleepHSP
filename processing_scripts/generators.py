@@ -224,14 +224,15 @@ function print_link(){\n\
         experiment_js.write(output)
 
 
-def generate_part1(config_file, num_guesses, dir_prefix, video=False):
+def generate_part1(config_file, dir_prefix, num_guesses=5, video=False):
     """Input: a csv file, the number of guesses allowed per item,
     and the path to the root directory for the experiment
         Optional: specify whether to generate html for displaying video
     Output: in the directory specified, the files for an ibex HSP experiment"""
-    generate_html(config_file, num_guesses, dir_prefix)
-    generate_experimentjs(config_file, num_guesses, dir_prefix)
+    generate_html(config_file, dir_prefix)
+    generate_experimentjs(config_file, dir_prefix)
 
 
-print generate_forms(hf_order_a_config)
+# print generate_forms(hf_order_a_config)
 # generate_part1(hf_order_a_config, 'U:/Experiments/sleepHSP')
+generate_part1(hf_order_b_config, 'U:/Experiments/sleepHSP')
