@@ -51,6 +51,7 @@ def random_dict_value(input_dict, value_index, check_value):
     except RuntimeError:
         return random.choice(frequent_words_list)
 
+
 def make_sure_dir_exists(dir_path):
     try:
         os.makedirs(dir_path)
@@ -437,9 +438,6 @@ def generate_part2_html(words_list, dir_prefix, subj_id, subject_responses):
                 highest_confidence_during_learning = subject_responses[probe][1]
                 n_times_guessed_during_learning = subject_responses[probe][2]
 
-
-
-
             csv_out.writerow([subject, condition, novel_word, probe, probe_type,
                               guessed_during_learning, highest_confidence_during_learning, n_times_guessed_during_learning])
 
@@ -517,6 +515,47 @@ def generate_part2(results, subj_id, dir_prefix):
     generate_part2_html(shuffle[1], dir_prefix, subj_id, part2_dict[1])
     generate_followup_js(part2_dict, shuffle, dir_prefix)
 
+
+def process_ibex_results(ibex_csv):
+    # given the results csv from Ibex for a condition eg PMAMHFa,
+    # split it into csvs for each subject, and create directories to use
+    # with the generate_part_2() function
+    # then, create all the follow-up surveys.
+
+    data_working_directory = 'C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\1. HSP survey'
+
+    followups_to_generate = []
+
+    with open(ibex_csv, 'rb+') as ibex_csv:
+        ibex_csv = csv.reader(ibex_csv)
+        ibex_csv = list(ibex_csv)
+        ibex_csv = [r for r in ibex_csv if '#' not in r[0]]
+
+        subject_id = None
+
+        for r in ibex_csv:
+            if r[7] == 'subject_id':
+                if r[7] != subject_id:
+                    subject_id = r[8]
+                    subject_dir = '{}\\{}'.format(data_working_directory, subject_id)
+                    make_sure_dir_exists(subject_dir)
+                    make_sure_dir_exists('{}\\chunk_includes'.format(subject_dir))
+                    make_sure_dir_exists('{}\\data_includes'.format(subject_dir))
+                    followups_to_generate.append(subject_id)
+            with open('{}\\results.csv'.format(subject_dir), 'ab+') as results:
+                results = csv.writer(results)
+                results.writerow(r)
+
+        print followups_to_generate
+        for s in followups_to_generate:
+            results = '{}\\{}\\results.csv'.format(data_working_directory,s)
+            subject = s
+            prefix = '{}\\{}'.format(data_working_directory,s)
+            generate_part2(results,subject,prefix)
+
+process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\1. HSP survey\\11 15 2016 AM.csv')
+
+
 ### test cases ###
 
 ### single guess responses
@@ -539,6 +578,8 @@ def generate_part2(results, subj_id, dir_prefix):
 # generate_part2(high_low_tie_results, high_low_tie_subject, high_low_tie_prefix)
 
 ### real subject data ###
+
+
 
 # 10/13/16
 # PMAMHFa_m100results = "U:/Experiments/sleepHSP followup/followups/October 2016/PMAMHFa_m100/results.csv"
@@ -602,10 +643,10 @@ def generate_part2(results, subj_id, dir_prefix):
 # PMAMHFa_m204 = "U:/Experiments/sleepHSP followup/followups/October 2016/PMAMHFa_m204"
 # generate_part2(PMAMHFa_m204results, PMAMHFa_m204prefix, PMAMHFa_m204)
 
-PMAMHFa_m205results = "U:/Experiments/sleepHSP followup/followups/October 2016/PMAMHFa_m205/results.csv"
-PMAMHFa_m205prefix = "U:/Experiments/sleepHSP followup/followups/October 2016/PMAMHFa_m205/"
-PMAMHFa_m205 = "U:/Experiments/sleepHSP followup/followups/October 2016/PMAMHFa_m205"
-generate_part2(PMAMHFa_m205results, PMAMHFa_m205prefix, PMAMHFa_m205)
+# PMAMHFa_m205results = "U:/Experiments/sleepHSP followup/followups/October 2016/PMAMHFa_m205/results.csv"
+# PMAMHFa_m205prefix = "U:/Experiments/sleepHSP followup/followups/October 2016/PMAMHFa_m205/"
+# PMAMHFa_m205 = "U:/Experiments/sleepHSP followup/followups/October 2016/PMAMHFa_m205"
+# generate_part2(PMAMHFa_m205results, PMAMHFa_m205prefix, PMAMHFa_m205)
 # ERROR
 
 # PMAMHFa_m206results = "U:/Experiments/sleepHSP followup/followups/October 2016/PMAMHFa_m206/results.csv"
