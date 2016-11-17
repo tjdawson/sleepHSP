@@ -552,7 +552,7 @@ def process_ibex_results(ibex_csv):
             generate_part2(results,subject,prefix)
 
 
-def github_it(subject_id):
+def github_it(results_dir):
     # this function will create a github branch from
     # the master branch of our sleepHSPfollowup repo
     # ***the branch's name is the subject's unique ID***
@@ -561,7 +561,9 @@ def github_it(subject_id):
     # commits the changes, and publishes the branch
     # finally, it should print a reminder that the user still
     # needs to manually create and sync the followups on the Ibex Farm
-    subprocess.check_call(['./commit.sh',subject_id])
+
+    subprocess.check_call(['./commit.sh',results_dir])   # not actually sure yet which method to use for this, or if shell needs to = True
+    print "GitHub branch created, ***you must still manually add and sync the Ibex experiment for {}***".format(results_dir.split('/')[-1])
 
 # process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 15 2016 AM.csv')
 # process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 15 2016 PM.csv')
