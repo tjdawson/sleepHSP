@@ -2,13 +2,11 @@ from collections import defaultdict
 from copy import deepcopy
 import csv
 import errno
-import itertools
 from nltk import WordNetLemmatizer
-from operator import itemgetter
 import os
 import random
-import re
 import shutil
+import subprocess
 
 results = 'U:/Experiments/sleepHSP/results/results.csv'
 
@@ -522,7 +520,7 @@ def process_ibex_results(ibex_csv):
     # with the generate_part_2() function
     # then, create all the follow-up surveys.
 
-    data_working_directory = 'C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\1. HSP survey'
+    data_working_directory = 'C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey'
 
     followups_to_generate = []
 
@@ -553,8 +551,22 @@ def process_ibex_results(ibex_csv):
             prefix = '{}\\{}'.format(data_working_directory,s)
             generate_part2(results,subject,prefix)
 
-process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\1. HSP survey\\11 15 2016 AM.csv')
 
+def github_it(subject_id):
+    # this function will create a github branch from
+    # the master branch of our sleepHSPfollowup repo
+    # ***the branch's name is the subject's unique ID***
+    # it copies over the chunk_includes and data_includes
+    # directories created by process_ibex_results() to that branch,
+    # commits the changes, and publishes the branch
+    # finally, it should print a reminder that the user still
+    # needs to manually create and sync the followups on the Ibex Farm
+    subprocess.check_call(['./commit.sh',subject_id])
+
+# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 15 2016 AM.csv')
+# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 15 2016 PM.csv')
+# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 16 2016 AM.csv')
+process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 17 2016 AM.csv')
 
 ### test cases ###
 
