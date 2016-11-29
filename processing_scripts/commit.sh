@@ -1,6 +1,6 @@
 #!/bin/bash
 home=`pwd`
-for d in */ ; do
+for d in $1/* ; do
     dir=${d%/}
     cd U:/Experiments/sleepHSP\ followup/sleepHSPfollowup/
     git checkout -b $dir
