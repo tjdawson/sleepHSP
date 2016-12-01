@@ -47,7 +47,7 @@ def generate_forms(config_file):
         word_list = list(word_list)
         for word in word_list:
             for i in range(5):
-                guess = "[\"%s_guess%s\", \"Form\", { \nhtml: {include: \"%s_guess%s.html\"} \n}]," % (word, i, word, i)
+                guess = "[\"%s_guess%s\", \"Form\", { \nhtml: {include: \"%s_guess%s.html\"}, \n validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true, else return \"Please enter only a single word per guess\"; } } }]," % (word, i, word, i)
                 output += guess + "\n\n"
         return output
 
@@ -235,4 +235,7 @@ def generate_part1(config_file, dir_prefix, num_guesses=5, video=False):
 
 # print generate_forms(hf_order_a_config)
 # generate_part1(hf_order_a_config, 'U:/Experiments/sleepHSP')
-generate_part1(hf_order_b_config, 'U:/Experiments/sleepHSP')
+generate_part1(hf_order_a_config, 'C:/Users/tjdawson/Dropbox/Sleep_Study/HFa')
+generate_part1(hf_order_b_config, 'C:/Users/tjdawson/Dropbox/Sleep_Study/HFb')
+generate_part1(hl_order_a_config, 'C:/Users/tjdawson/Dropbox/Sleep_Study/HLa')
+generate_part1(hl_order_b_config, 'C:/Users/tjdawson/Dropbox/Sleep_Study/HLb')
