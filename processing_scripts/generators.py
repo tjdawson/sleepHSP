@@ -47,7 +47,7 @@ def generate_forms(config_file):
         word_list = list(word_list)
         for word in word_list:
             for i in range(5):
-                guess = "[\"%s_guess%s\", \"Form\", { \nhtml: {include: \"%s_guess%s.html\"}, \n validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true, else return \"Please enter only a single word per guess\"; } } }]," % (word, i, word, i)
+                guess = "[\"%s_guess%s\", \"Form\", { \nhtml: {include: \"%s_guess%s.html\"}, \n validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return \"Please enter only a single word per guess\"; } } }]," % (word, i, word, i)
                 output += guess + "\n\n"
         return output
 
