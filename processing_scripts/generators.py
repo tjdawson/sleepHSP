@@ -15,7 +15,7 @@ def generate_shuffle_sequence(config_file):
     Output: a string with the ibex shuffle_sequence var"""
     shuffle_sequence_begin = "var shuffleSequence = seq(\"intro\", \"intro1\", \"intro2\", \"intro3\", \"sep\", \n"
     shuffle_sequence_middle = ""
-    shuffle_sequence_end = "\"end\"\n);"
+    shuffle_sequence_end = "\"sr\", \"end\"\n);"
 
     with open(config_file, 'rb+') as config_file:
         config_file = csv.reader(config_file)
@@ -47,7 +47,7 @@ def generate_forms(config_file):
         word_list = list(word_list)
         for word in word_list:
             for i in range(5):
-                guess = "[\"%s_guess%s\", \"Form\", { \nhtml: {include: \"%s_guess%s.html\"}, \n validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true, else return \"Please enter only a single word per guess\"; } } }]," % (word, i, word, i)
+                guess = "[\"%s_guess%s\", \"Form\", { \nhtml: {include: \"%s_guess%s.html\"}, \n validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return \"Please enter only a single word per guess\"; } } }]," % (word, i, word, i)
                 output += guess + "\n\n"
         return output
 
@@ -84,7 +84,7 @@ def generate_defaults():
 
 def generate_items(config_file):
     output = ""
-    begin = "var items = [\n\
+    begin = "var items = [\n [    [\"sr\", \"__SendResults__\", { }], \n\
     [\"sep\", \"Separator\", { }],\n\
     \n\
     //\n\
@@ -196,7 +196,8 @@ def generate_html(config_file, dir_prefix):
 
 def generate_experimentjs(config_file, dir_prefix):
     output = ""
-    begin = "// functions for generating followup links and emails\n\
+    begin = "// we want to be able to send results before the end \n var manualSendResults = true; \n\
+    // functions for generating followup links and emails\n\
 var email;\n\
 var unique_id;\n\
 var followup_link;\n\
