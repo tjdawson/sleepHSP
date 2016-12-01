@@ -514,13 +514,13 @@ def generate_part2(results, subj_id, dir_prefix):
     generate_followup_js(part2_dict, shuffle, dir_prefix)
 
 
-def process_ibex_results(ibex_csv):
+def process_ibex_results(ibex_csv, data_working_directory):
     # given the results csv from Ibex for a condition eg PMAMHFa,
     # split it into csvs for each subject, and create directories to use
     # with the generate_part_2() function
     # then, create all the follow-up surveys.
 
-    data_working_directory = 'C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey'
+    # data_working_directory = 'C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey'
 
     followups_to_generate = []
 
@@ -570,13 +570,16 @@ def github_it(results_dir, subject):
     os.system("sh U:\Experiments\sleepHSP\processing_scripts\commit.sh {} {}".format(results_dir, subject))
     print "GitHub branch created, ***you must still manually add and sync the Ibex experiment for {}***".format(results_dir.split('/')[-1])
 
+data_wd = 'C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey'
 # process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 15 2016 AM.csv')
 # process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 15 2016 PM.csv')
 # process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 16 2016 AM.csv')
 # process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 17 2016 AM.csv')
 # process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 22 2016 AM.csv')
 # process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey\\11 29 2016 PM.csv')
-process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey\\12 1 2016 AM.csv')
+# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey\\12 01 2016 AM.csv', data_wd)
+
+
 ### test cases ###
 
 ### single guess responses
