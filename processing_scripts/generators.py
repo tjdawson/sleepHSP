@@ -84,7 +84,7 @@ def generate_defaults():
 
 def generate_items(config_file):
     output = ""
-    begin = "var items = [\n [    [\"sr\", \"__SendResults__\", { }], \n\
+    begin = "var items = [\n [\"sr\", \"__SendResults__\", { }], \n\
     [\"sep\", \"Separator\", { }],\n\
     \n\
     //\n\

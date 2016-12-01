@@ -116,7 +116,7 @@ var defaults = [
 ];
 
 var items = [
- [    ["sr", "__SendResults__", { }], 
+    ["sr", "__SendResults__", { }],
     ["sep", "Separator", { }],
     
     //
