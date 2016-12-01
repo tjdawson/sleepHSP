@@ -10,12 +10,12 @@ import subprocess
 
 results = 'U:/Experiments/sleepHSP/results/results.csv'
 
-dir_prefix = "U:/Experiments/sleepHSP followup/followups"
+dir_prefix = "U:/Experiments/sleepHSP_followup/followups"
 test_id = 'test'
-output_file = 'U:/Experiments/sleepHSP followup/followups/{}/'.format(test_id)
+output_file = 'U:/Experiments/sleepHSP_followup/followups/{}/'.format(test_id)
 dir_prefix = dir_prefix + "/" + test_id + "/"
 main_dir = dir_prefix
-skeleton_dir_prefix = "U:/Experiments/sleepHSP followup/sleepHSPfollowup/"
+skeleton_dir_prefix = "U:/Experiments/sleepHSP_followup/sleepHSPfollowup/"
 
 # this is a list of frequent english words, we'll choose randomly from this when there aren't enough distractors
 frequent_words = []
@@ -218,7 +218,7 @@ def generate_part2_dict(ibex_data, unique_id):
             lowest_guess = lowest_guess[0]
 
             if highest_guess == lowest_guess:
-                print "high-low match"
+                # print "high-low match"
                 lowest_guess = next(lowest_guesses, None)
                 lowest_guess = lowest_guess[0] if type(lowest_guess) is tuple else None
 
@@ -245,7 +245,7 @@ def generate_part2_dict(ibex_data, unique_id):
 
             target_word = correct_answer_alternate_form if correct_answer_alternate_form else target_w_mystery_w[0]
             part_2_dict[target_w_mystery_w[1]] = [target_word, highest_guess, lowest_guess]
-        print subject_id
+        # print subject_id
 
         return [part_2_dict, response_stats]
 
@@ -427,7 +427,7 @@ def generate_part2_html(words_list, dir_prefix, subj_id, subject_responses):
                 highest_confidence_during_learning = subject_responses['distractor'][1]
                 n_times_guessed_during_learning = subject_responses['distractor'][2]
             else:
-                print probe
+                # print probe
 
                 for k,v in correct_answers.iteritems():
                     if probe in v:
@@ -440,7 +440,7 @@ def generate_part2_html(words_list, dir_prefix, subj_id, subject_responses):
                               guessed_during_learning, highest_confidence_during_learning, n_times_guessed_during_learning])
 
     for fname in fnames:
-        print fname
+        # print fname
         split_fname = fname.split("_")
         mystery, test_word = split_fname[1], split_fname[2]
         src = sound_url_prefix + mystery + sound_url_affix
@@ -520,7 +520,7 @@ def process_ibex_results(ibex_csv):
     # with the generate_part_2() function
     # then, create all the follow-up surveys.
 
-    data_working_directory = 'C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey'
+    data_working_directory = 'C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey'
 
     followups_to_generate = []
 
@@ -544,15 +544,20 @@ def process_ibex_results(ibex_csv):
                 results = csv.writer(results)
                 results.writerow(r)
 
-        print followups_to_generate
+        # print followups_to_generate
         for s in followups_to_generate:
             results = '{}\\{}\\results.csv'.format(data_working_directory,s)
             subject = s
             prefix = '{}\\{}'.format(data_working_directory,s)
+            prefix = prefix.replace('\\', '/')
+
+            full_path = '{}\\{}'.format(data_working_directory,s)
+
             generate_part2(results,subject,prefix)
+            # github_it(full_path, subject)
 
 
-def github_it(results_dir):
+def github_it(results_dir, subject):
     # this function will create a github branch from
     # the master branch of our sleepHSPfollowup repo
     # ***the branch's name is the subject's unique ID***
@@ -562,14 +567,16 @@ def github_it(results_dir):
     # finally, it should print a reminder that the user still
     # needs to manually create and sync the followups on the Ibex Farm
 
-    subprocess.check_call(['./commit.sh',results_dir])   # not actually sure yet which method to use for this, or if shell needs to = True
+    os.system("sh U:\Experiments\sleepHSP\processing_scripts\commit.sh {} {}".format(results_dir, subject))
     print "GitHub branch created, ***you must still manually add and sync the Ibex experiment for {}***".format(results_dir.split('/')[-1])
 
 # process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 15 2016 AM.csv')
 # process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 15 2016 PM.csv')
 # process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 16 2016 AM.csv')
-process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 17 2016 AM.csv')
-
+# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 17 2016 AM.csv')
+# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 22 2016 AM.csv')
+# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey\\11 29 2016 PM.csv')
+process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey\\12 1 2016 AM.csv')
 ### test cases ###
 
 ### single guess responses
