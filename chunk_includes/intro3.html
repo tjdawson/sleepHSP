@@ -1,0 +1,43 @@
+<style>
+    label {
+        display: inline-block;
+        margin-bottom: 8px;
+    }
+</style>
+
+<div style="width: 40em;" id="intro">
+    <h1><img src="https://upenn.box.com/shared/static/kk7q8sx5u8h6m8fjh11bvwfc9iwrpgoq.png" style="width:5%; height:auto"> Instructions</h1>
+    <table>
+        <tr>
+            <td colspan="2" style="width: 30em; padding-bottom: 1em;">
+                Please enter your unique identifier and demographic information below. If you have not been provided with one, please ask the experimenter for one now. When you are done, please click the link to continue.
+            </td>
+        </tr>
+        <tr>
+            <td>Unique ID:</td><td><input name="subject_id" id="subject_id" type="text" size="30" class="obligatory" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><label class="error" for="subject_id"></label></td>
+        </tr>
+        <tr>
+            <td>Age:</td><td><input name="age" id="age" type="text" size="30" class="obligatory" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><label class="error" for="age"></label></td>
+        </tr>
+        <tr class="bordered">
+            <td>Sex:</td>
+            <td>
+            <label for="csexmale"><input name="sex" type="radio" value="male" class="obligatory" id="csexmale" /> <span>Male</span> </label>
+            <label for="csexfemale"><input name="sex" type="radio" value="female" id="csexfemale"/> <span>Female</span> </label>
+            <label for="csexother"><input name="sex" type="radio" value="other" id="csexother"/> <span>Other</span> </label>
+            <label for="csexnot"> <input name="sex" type="radio" value="prefernot" id="csexnot"/> <span>Prefer not to say</span> </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><label class="error" for="sex"></label></td>
+        </tr>
+
+    </table>
+
+</div>

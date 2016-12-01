@@ -1,0 +1,19 @@
+<body onload="onload();">
+
+<div style="width: 40em;" id="intro">
+
+    <h2>Thank you for participating. The experiment is complete.</h2>
+    <h3>Reminder for Part 2: You will need to complete this part of the study between 10-14 hours after the start of Part 1.</h3>
+        <p>You are in the <b>morning/evening group</b>; which means that your survey will be available from <b>6pm-12am/6am-12pm.</b></p>
+        <p><b>The follow-up survey will not be available until this time. Please note that if you do not complete the follow-up survey, we cannot give you credit for this experiment.</b></p>
+        <p>You may email yourself a link, or generate the link to copy or bookmark by filling out the information below. Then, please click the link at the bottom of the page to submit your results.</p>
+
+    <input type="text" name="enter" class="enter" placeholder="type your email here" id="participant_email"/>
+    <input type="text" name="enter" class="enter" placeholder="enter your Unique ID" id="unique_id"/>
+    <input type="button" value="click to send link" onclick="send_mail();"/>
+    <input type="button" value="click to generate link" onclick="print_link();"/>
+    <div id="display_link"></div>
+
+</div>
+
+</body>
