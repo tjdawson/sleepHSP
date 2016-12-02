@@ -116,7 +116,7 @@ var defaults = [
 ];
 
 var items = [
- [    ["sr", "__SendResults__", { }], 
+    ["sr", "__SendResults__", { }], 
     ["sep", "Separator", { }],
     
     //
@@ -160,243 +160,243 @@ var items = [
     //
 ["tula_mommy_guess0", "Form", { 
 html: {include: "tula_mommy_guess0.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["tula_mommy_guess1", "Form", { 
 html: {include: "tula_mommy_guess1.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["tula_mommy_guess2", "Form", { 
 html: {include: "tula_mommy_guess2.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["tula_mommy_guess3", "Form", { 
 html: {include: "tula_mommy_guess3.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["tula_mommy_guess4", "Form", { 
 html: {include: "tula_mommy_guess4.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["tace_phone_guess0", "Form", { 
 html: {include: "tace_phone_guess0.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["tace_phone_guess1", "Form", { 
 html: {include: "tace_phone_guess1.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["tace_phone_guess2", "Form", { 
 html: {include: "tace_phone_guess2.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["tace_phone_guess3", "Form", { 
 html: {include: "tace_phone_guess3.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["tace_phone_guess4", "Form", { 
 html: {include: "tace_phone_guess4.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["geck_nose_guess0", "Form", { 
 html: {include: "geck_nose_guess0.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["geck_nose_guess1", "Form", { 
 html: {include: "geck_nose_guess1.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["geck_nose_guess2", "Form", { 
 html: {include: "geck_nose_guess2.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["geck_nose_guess3", "Form", { 
 html: {include: "geck_nose_guess3.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["geck_nose_guess4", "Form", { 
 html: {include: "geck_nose_guess4.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["zant_book_guess0", "Form", { 
 html: {include: "zant_book_guess0.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["zant_book_guess1", "Form", { 
 html: {include: "zant_book_guess1.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["zant_book_guess2", "Form", { 
 html: {include: "zant_book_guess2.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["zant_book_guess3", "Form", { 
 html: {include: "zant_book_guess3.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["zant_book_guess4", "Form", { 
 html: {include: "zant_book_guess4.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["bist_horse_guess0", "Form", { 
 html: {include: "bist_horse_guess0.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["bist_horse_guess1", "Form", { 
 html: {include: "bist_horse_guess1.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["bist_horse_guess2", "Form", { 
 html: {include: "bist_horse_guess2.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["bist_horse_guess3", "Form", { 
 html: {include: "bist_horse_guess3.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["bist_horse_guess4", "Form", { 
 html: {include: "bist_horse_guess4.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["tiz_thing_guess0", "Form", { 
 html: {include: "tiz_thing_guess0.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["tiz_thing_guess1", "Form", { 
 html: {include: "tiz_thing_guess1.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["tiz_thing_guess2", "Form", { 
 html: {include: "tiz_thing_guess2.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["tiz_thing_guess3", "Form", { 
 html: {include: "tiz_thing_guess3.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["tiz_thing_guess4", "Form", { 
 html: {include: "tiz_thing_guess4.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["blime_toy_guess0", "Form", { 
 html: {include: "blime_toy_guess0.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["blime_toy_guess1", "Form", { 
 html: {include: "blime_toy_guess1.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["blime_toy_guess2", "Form", { 
 html: {include: "blime_toy_guess2.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["blime_toy_guess3", "Form", { 
 html: {include: "blime_toy_guess3.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["blime_toy_guess4", "Form", { 
 html: {include: "blime_toy_guess4.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["jair_time_guess0", "Form", { 
 html: {include: "jair_time_guess0.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["jair_time_guess1", "Form", { 
 html: {include: "jair_time_guess1.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["jair_time_guess2", "Form", { 
 html: {include: "jair_time_guess2.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["jair_time_guess3", "Form", { 
 html: {include: "jair_time_guess3.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["jair_time_guess4", "Form", { 
 html: {include: "jair_time_guess4.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["vash_shoe_guess0", "Form", { 
 html: {include: "vash_shoe_guess0.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["vash_shoe_guess1", "Form", { 
 html: {include: "vash_shoe_guess1.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["vash_shoe_guess2", "Form", { 
 html: {include: "vash_shoe_guess2.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["vash_shoe_guess3", "Form", { 
 html: {include: "vash_shoe_guess3.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["vash_shoe_guess4", "Form", { 
 html: {include: "vash_shoe_guess4.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["mipen_bag_guess0", "Form", { 
 html: {include: "mipen_bag_guess0.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["mipen_bag_guess1", "Form", { 
 html: {include: "mipen_bag_guess1.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["mipen_bag_guess2", "Form", { 
 html: {include: "mipen_bag_guess2.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["mipen_bag_guess3", "Form", { 
 html: {include: "mipen_bag_guess3.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["mipen_bag_guess4", "Form", { 
 html: {include: "mipen_bag_guess4.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["doon_necklace_guess0", "Form", { 
 html: {include: "doon_necklace_guess0.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["doon_necklace_guess1", "Form", { 
 html: {include: "doon_necklace_guess1.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["doon_necklace_guess2", "Form", { 
 html: {include: "doon_necklace_guess2.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["doon_necklace_guess3", "Form", { 
 html: {include: "doon_necklace_guess3.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["doon_necklace_guess4", "Form", { 
 html: {include: "doon_necklace_guess4.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["telpen_ball_guess0", "Form", { 
 html: {include: "telpen_ball_guess0.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["telpen_ball_guess1", "Form", { 
 html: {include: "telpen_ball_guess1.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["telpen_ball_guess2", "Form", { 
 html: {include: "telpen_ball_guess2.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["telpen_ball_guess3", "Form", { 
 html: {include: "telpen_ball_guess3.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["telpen_ball_guess4", "Form", { 
 html: {include: "telpen_ball_guess4.html"}, 
- validators: {guess: function (s) {if (s.match(/^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
+ validators: {guess: function (s) {if (s.match(/()|^[A-Za-z']+$/)) return true; else return "Please enter only a single word per guess"; } } }],
 
 ["end", "Form", {
         html: {include: "end.html"},
