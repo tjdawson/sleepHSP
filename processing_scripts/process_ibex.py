@@ -520,7 +520,7 @@ def process_ibex_results(ibex_csv, data_working_directory):
     # with the generate_part_2() function
     # then, create all the follow-up surveys.
 
-    # data_working_directory = 'C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey'
+    # data_working_directory = 'C:/Users/tjdawson/Dropbox/Sleep_Study/HSP_survey'
 
     followups_to_generate = []
 
@@ -535,23 +535,23 @@ def process_ibex_results(ibex_csv, data_working_directory):
             if r[7] == 'subject_id':
                 if r[7] != subject_id:
                     subject_id = r[8]
-                    subject_dir = '{}\\{}'.format(data_working_directory, subject_id)
+                    subject_dir = '{}/{}'.format(data_working_directory, subject_id)
                     make_sure_dir_exists(subject_dir)
-                    make_sure_dir_exists('{}\\chunk_includes'.format(subject_dir))
-                    make_sure_dir_exists('{}\\data_includes'.format(subject_dir))
+                    make_sure_dir_exists('{}/chunk_includes'.format(subject_dir))
+                    make_sure_dir_exists('{}/data_includes'.format(subject_dir))
                     followups_to_generate.append(subject_id)
-            with open('{}\\results.csv'.format(subject_dir), 'ab+') as results:
+            with open('{}/results.csv'.format(subject_dir), 'ab+') as results:
                 results = csv.writer(results)
                 results.writerow(r)
 
         # print followups_to_generate
         for s in followups_to_generate:
-            results = '{}\\{}\\results.csv'.format(data_working_directory,s)
+            results = '{}/{}/results.csv'.format(data_working_directory,s)
             subject = s
-            prefix = '{}\\{}'.format(data_working_directory,s)
-            prefix = prefix.replace('\\', '/')
+            prefix = '{}/{}'.format(data_working_directory,s)
+            prefix = prefix.replace('/', '/')
 
-            full_path = '{}\\{}'.format(data_working_directory,s)
+            full_path = '{}/{}'.format(data_working_directory,s)
 
             generate_part2(results,subject,prefix)
             # github_it(full_path, subject)
@@ -570,16 +570,17 @@ def github_it(results_dir, subject):
     os.system("sh U:\Experiments\sleepHSP\processing_scripts\commit.sh {} {}".format(results_dir, subject))
     print "GitHub branch created, ***you must still manually add and sync the Ibex experiment for {}***".format(results_dir.split('/')[-1])
 
-data_wd = 'C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey'
-# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 15 2016 AM.csv')
-# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 15 2016 PM.csv')
-# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 16 2016 AM.csv')
-# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 17 2016 AM.csv')
-# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep Study\\HSP survey\\11 22 2016 AM.csv')
-# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey\\11 29 2016 PM.csv')
-# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey\\12 01 2016 AM.csv', data_wd)
-# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey\\12 01 2016 PM.csv', data_wd)
-# process_ibex_results('C:\\Users\\tjdawson\\Dropbox\\Sleep_Study\\HSP_survey\\12 01 2016 AM.csv', data_wd + "\\test")
+data_wd = 'C:/Users/tjdawson/Dropbox/Sleep_Study/HSP_survey'
+# process_ibex_results('C:/Users/tjdawson/Dropbox/Sleep Study/HSP survey/11 15 2016 AM.csv')
+# process_ibex_results('C:/Users/tjdawson/Dropbox/Sleep Study/HSP survey/11 15 2016 PM.csv')
+# process_ibex_results('C:/Users/tjdawson/Dropbox/Sleep Study/HSP survey/11 16 2016 AM.csv')
+# process_ibex_results('C:/Users/tjdawson/Dropbox/Sleep Study/HSP survey/11 17 2016 AM.csv')
+# process_ibex_results('C:/Users/tjdawson/Dropbox/Sleep Study/HSP survey/11 22 2016 AM.csv')
+# process_ibex_results('C:/Users/tjdawson/Dropbox/Sleep_Study/HSP_survey/11 29 2016 PM.csv')
+# process_ibex_results('C:/Users/tjdawson/Dropbox/Sleep_Study/HSP_survey/12 01 2016 AM.csv', data_wd)
+# process_ibex_results('C:/Users/tjdawson/Dropbox/Sleep_Study/HSP_survey/12 01 2016 PM.csv', data_wd)
+# process_ibex_results('C:/Users/tjdawson/Dropbox/Sleep_Study/HSP_survey/12 01 2016 AM.csv', data_wd + "/test")
+process_ibex_results('../../output.csv', '../../');
 
 ### test cases ###
 
